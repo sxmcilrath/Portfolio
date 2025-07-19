@@ -1,0 +1,14 @@
+#Build output 
+bin/
+obj/
+
+#VS-Specific
+.vs/
+*.user
+*.suo
+
+#other
+*.dbml
+*.log
+*.DS_Store
+*.swp

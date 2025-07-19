@@ -1,0 +1,22 @@
+﻿@namespace Portfolio.UIComponents
+
+@inherits LayoutComponentBase
+
+
+<div class="animated-gradient-text @ClassName">
+    @if (ShowBorder)
+    {
+        <div class="gradient-overlay" style="@GradientStyle"></div>
+    }
+    <div class="text-content" style="@GradientStyle">@ChildContent</div>
+</div>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string[] Colors { get; set; } = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"];
+    [Parameter] public int AnimationSpeed { get; set; } = 8;
+    [Parameter] public bool ShowBorder { get; set; } = false;
+    [Parameter] public string ClassName { get; set; } = "";
+
+    private string GradientStyle => $"background-image: linear-gradient(to right, {string.Join(",", Colors)}); animation-duration: {AnimationSpeed}s;";
+}

@@ -2,6 +2,11 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+body {
+  background-color: #121212; /* very popular modern dark gray */
+  color: #ffffff;            /* ensures text is readable */
+}
+
 h1:focus {
     outline: none;
 }
@@ -107,11 +112,70 @@ code {
   position: fixed;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-100%); /* start hidden above */
+  opacity: 0;
   background-color: rgba(255, 255, 255, 0.75);
   padding: 0.75rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  pointer-events: none;
+  transition: opacity 0.4s ease-out; /* fade fallback */
+}
+
+/* Visible state: slide in + Bond‑style pop */
+.show-navbar {
+  /* bring into view before animation kicks in */
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+
+  /* play the Bond animation */
+  animation: bondJamesBond 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+/* Bond‑style keyframes */
+@keyframes bondJamesBond {
+  0% {
+    transform: translateX(1000px) scale(1);
+    border-radius: 1rem;
+  }
+  80% {
+    transform: translateX(-50%) scale(0.3);
+    border-radius: 75px;
+  }
+  90% {
+    transform: translateX(-50%) scale(0.7);
+    border-radius: 3px;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    border-radius: 1rem;
+  }
+}
+
+/* 1) Hide buttons by default */
+.custom-navbar .nav-button{
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* 2) When navbar has .show-navbar, animate buttons in with a delay */
+.custom-navbar.show-navbar .nav-button {
+  animation: fadeInButton 0.4s ease-out forwards;
+  /* match this delay to the length of your bondJamesBond animation (1.5s) */
+  animation-delay: 1.5s;
+}
+
+/* 3) Define the keyframes for the button reveal */
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

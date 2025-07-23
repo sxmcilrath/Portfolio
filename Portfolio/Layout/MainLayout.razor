@@ -1,11 +1,17 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
+@inject IJSRuntime JSRuntime
 
-    <div class="custom-navbar">
-        <RadzenButton Text="Home" Path="/" Style="margin-right: 1rem;" />
-        <RadzenButton Text="Projects" Path="/projects" Style="margin-right: 1rem;" />
-        <RadzenButton Text="Contact" Path="/contact" />
-    </div>
+<div class="page">
+    @if(showNav)
+    {
+        <div class="custom-navbar @(showNav ? "show-navbar" : "hide-navbar")">
+                <RadzenButton class="nav-button" Text="About Me" Style="margin-right: 1rem;" />
+                <RadzenButton class="nav-button" Text="Work" Style="margin-right: 1rem;" />
+                <RadzenButton class="nav-button" Text="Education"/>
+                <RadzenButton class="nav-button" Text="Projects"/>
+        </div>
+    }   
+
 
     <main>
         <article class="content px-4">
@@ -13,3 +19,25 @@
         </article>
     </main>
 </div>
+
+
+@code{
+
+
+    private bool showNav = false;
+    private bool isAnimated = false;
+
+    /*Navbar visitbility functions*/
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender)
+            await JSRuntime.InvokeVoidAsync("initScrollWatcher", DotNetObjectReference.Create(this));
+    }
+
+    [JSInvokable]
+    public void SetNavBarVisibility(bool show)
+    {
+        showNav = show;
+        StateHasChanged();
+    }
+}

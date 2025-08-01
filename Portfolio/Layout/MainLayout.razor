@@ -2,17 +2,15 @@
 @inject IJSRuntime JSRuntime
 
 <div class="page">
-    @if(showNav)
+    @if(navVisible)
     {
         <div class="custom-navbar @(showNav ? "show-navbar" : "hide-navbar")">
-                <RadzenButton class="nav-button" Text="About Me" Style="margin-right: 1rem;" />
-                <RadzenButton class="nav-button" Text="Work" Style="margin-right: 1rem;" />
-                <RadzenButton class="nav-button" Text="Education"/>
-                <RadzenButton class="nav-button" Text="Projects"/>
+            <RadzenButton class="nav-button" Text="About Me" Style="" />
+            <RadzenButton class="nav-button" Text="Work" Style="" />
+            <RadzenButton class="nav-button" Text="Education"/>
+            <RadzenButton class="nav-button" Text="Projects"/>
         </div>
-    }   
-
-
+    }
     <main>
         <article class="content px-4">
             @Body
@@ -22,12 +20,10 @@
 
 
 @code{
-
-
     private bool showNav = false;
-    private bool isAnimated = false;
+    private bool navVisible = false;
+    private bool isAnimating = false;
 
-    /*Navbar visitbility functions*/
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if(firstRender)
@@ -35,9 +31,29 @@
     }
 
     [JSInvokable]
-    public void SetNavBarVisibility(bool show)
+    public async Task SetNavBarVisibility(bool show)
     {
-        showNav = show;
-        StateHasChanged();
+        if (isAnimating || show == showNav) return;
+
+        isAnimating = true;
+
+        if (show)
+        {
+            navVisible = true;
+            showNav = true;
+            StateHasChanged();
+            await Task.Delay(1600); // navbar show animation duration
+        }
+        else
+        {
+            showNav = false;
+            StateHasChanged();
+            await Task.Delay(600); // navbar hide animation duration
+            navVisible = false;
+            StateHasChanged();
+        }
+
+        isAnimating = false;
     }
+
 }

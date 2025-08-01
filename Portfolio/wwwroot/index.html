@@ -44,6 +44,20 @@
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
     <script src="js/navBarScrollWatcher.js"></script>
 
+     <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; width:0; height:0">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blurred"/>
+      <feColorMatrix in="blurred" mode="matrix"
+        values="
+          1 0 0 0 0  
+          0 1 0 0 0  
+          0 0 1 0 0  
+          0 0 0 20 -10
+        " result="gooed"/>
+      <feComposite in="SourceGraphic" in2="gooed" operator="atop"/>
+    </filter>
+  </svg>
+
 </body>
 
 </html>

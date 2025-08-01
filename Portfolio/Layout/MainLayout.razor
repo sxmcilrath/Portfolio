@@ -5,10 +5,12 @@
     @if(navVisible)
     {
         <div class="custom-navbar @(showNav ? "show-navbar" : "hide-navbar")">
-            <RadzenButton class="nav-button" Text="About Me" Style="" />
-            <RadzenButton class="nav-button" Text="Work" Style="" />
-            <RadzenButton class="nav-button" Text="Education"/>
-            <RadzenButton class="nav-button" Text="Projects"/>
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton class="nav-button rz-border-radius-1" Text="About Me" Style="" />
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Work" Style="" />
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Education"/>
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Projects"/>
+            </RadzenStack>
         </div>
     }
     <main>

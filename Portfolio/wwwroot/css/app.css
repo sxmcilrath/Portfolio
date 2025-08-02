@@ -251,8 +251,6 @@ code {
   background: linear-gradient(to bottom, #f97316, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* For some browsers */
   background-clip: text;
   color: transparent;
 }
@@ -261,8 +259,6 @@ code {
   background: linear-gradient(to top, #f97316, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* For some browsers */
   background-clip: text;
   color: transparent;
 }
@@ -273,3 +269,22 @@ code {
     background-color: #ccc; /* can use #999 or theme-neutral */
     opacity: 0.5;
 }
+
+.skill-card-border {
+    padding: 5px;
+    border-radius: 1rem;
+    background: linear-gradient(270deg, #fcd9a0, #9ad0f5, #fcd9a0);
+    background-size: 600% 600%;
+    animation: gradientBorder 8s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.inner-card {
+    border-radius: 0.9rem;
+}
+

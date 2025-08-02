@@ -38,27 +38,30 @@
 
             <!-- Skills section -->
             <RadzenStack Orientation="Orientation.Vertical" Style="width: 100%;">
+               
                 <RadzenText TextStyle="TextStyle.H2" Text="Skills"/>
-                <RadzenCard class="rz-border-radius-4" Variant="Variant.Outlined" Style="width: 100%; min-width: 15rem;">
-                    <!-- Skill Groupings -->
-                    <RadzenStack Orientation="Orientation.Vertical">
-                        <!--Languages -->
+                <div class="skill-card-border">
+                    <RadzenCard class="inner-card rz-border-radius-4" Variant="Variant.Filled" Style="width: 100%; min-width: 15rem; background-color: #121212;">
+                        <!-- Skill Groupings -->
                         <RadzenStack Orientation="Orientation.Vertical">
-                            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-                                <span class="line"></span>
-                                <RadzenText TextStyle="TextStyle.H6" Text="Languages" Style="color: white;"/>
-                                <span class="line"></span>
-                            </RadzenStack>    
-                            <!--Language Cards-->
-                            <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
-                                @foreach(var pair in languages)
-                                {   
-                                    <SkillCard Skill="@pair.Key" ImagePath="@languages[pair.Key]"/>
-                                }
+                            <!--Languages -->
+                            <RadzenStack Orientation="Orientation.Vertical">
+                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                                    <span class="line"></span>
+                                    <RadzenText TextStyle="TextStyle.H6" Text="Languages" Style="color: white;"/>
+                                    <span class="line"></span>
+                                </RadzenStack>    
+                                <!--Language Cards-->
+                                <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
+                                    @foreach(var pair in languages)
+                                    {   
+                                        <SkillCard Skill="@pair.Key" ImagePath="@languages[pair.Key]"/>
+                                    }
+                                </RadzenStack>
                             </RadzenStack>
                         </RadzenStack>
-                    </RadzenStack>
-                </RadzenCard>
+                    </RadzenCard>
+                </div>
             </RadzenStack>
 
         </RadzenStack>

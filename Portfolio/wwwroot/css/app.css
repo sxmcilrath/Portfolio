@@ -273,7 +273,7 @@ code {
 .skill-card-border {
     padding: 5px;
     border-radius: 1rem;
-    background: linear-gradient(270deg, #fcd9a0, #9ad0f5, #fcd9a0);
+    background: linear-gradient(270deg, #fb923c, #60a5fa, #fcd9a0);
     background-size: 600% 600%;
     animation: gradientBorder 8s ease infinite;
 }

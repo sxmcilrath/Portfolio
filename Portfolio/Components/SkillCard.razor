@@ -3,7 +3,10 @@
 <RadzenCard class="rz-py-1 rz-px-1" Style="background-color: rgb(40, 54, 60); overflow: hidden;">
     <RadzenStack Orientation="Orientation.Horizontal" AlignItems=" AlignItems.Center" JustifyContent=" JustifyContent.Center">
         <RadzenText TextStyle="TextStyle.Body1" Text="@Skill" Style="color: white;"/>
-        <RadzenImage Path="@ImagePath" Style="width: 30px; height: auto;"/>
+        @if(@ImagePath != string.Empty)
+        {
+            <RadzenImage Path="@ImagePath" Style="width: 30px; height: auto;"/>
+        }
     </RadzenStack>
 </RadzenCard>
 

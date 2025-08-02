@@ -237,3 +237,33 @@ code {
     transform: translateY(0);
   }
 }
+
+/* Radzen vars */
+.rz-text-h1 {
+  font-size: 8rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+
+/*About Me*/
+.gradient-text {
+  background: linear-gradient(to bottom, #f97316, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For some browsers */
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-rev {
+  background: linear-gradient(to top, #f97316, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For some browsers */
+  background-clip: text;
+  color: transparent;
+}
+

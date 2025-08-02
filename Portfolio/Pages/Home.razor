@@ -4,24 +4,37 @@
 <section id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 80%;">
         <RadzenText
-            class="rz-pt-12"
+            class="gradient-text-rev rz-pt-12"
             Text="Hi, I'm Sam!"
             TextStyle="TextStyle.H1"
             TextAlign="TextAlign.Center"
             Style="!important; color: white;" />
         <RadzenText
+            class="gradient-text"
             TextStyle="TextStyle.H2"
             Text="I'm a Full Stack Developer studying Computer Science!"
             TextAlign="TextAlign.Center"
-            Style="color: white; width: 80%"/>
+            Style="width: 80%"/>
     </RadzenStack>
 </section>
 
-<section id="not-hero">
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm Sam no hero!" TextAlign="TextAlign.Center" />
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm not in Hero!" TextAlign="TextAlign.Center" />
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm Sam!" TextAlign="TextAlign.Center" />
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm Sam!" TextAlign="TextAlign.Center" />
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm Sam!" TextAlign="TextAlign.Center" />
-    <RadzenText class="rz-pt-10" TextStyle="TextStyle.H1" Text="Hi, I'm Sam!" TextAlign="TextAlign.Center" />
-</section>  
+<section id="about-me" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <RadzenStack Orientation="Orientation.Vertical">
+        <RadzenText
+            class="gradient-text rz-pt-10"
+            TextStyle="TextStyle.H1"
+            Text="About Me"
+            TextAlign="TextAlign.Center" 
+        />
+        <RadzenStack Orientation="Orientation.Horizontal">
+            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+                <RadzenImage Path="about_me.png" Style="width: 15rem; height: auto;"/>
+                <RadzenText TextStyle="TextStyle.H4" Style="width: 60%">
+                    Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
+                    I have experience with front and back end development, IaC, automation, and systems programming.
+                </RadzenText>
+            </RadzenStack>
+        </RadzenStack>
+    </RadzenStack>
+
+</section> 

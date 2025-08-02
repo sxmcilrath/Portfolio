@@ -19,14 +19,14 @@
 </section>
 
 <section id="about-me" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
-    <RadzenStack Orientation="Orientation.Vertical">
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
         <RadzenText
             class="gradient-text rz-pt-10"
             TextStyle="TextStyle.H1"
             Text="About Me"
             TextAlign="TextAlign.Center" 
         />
-        <RadzenStack Orientation="Orientation.Horizontal">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
             <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
                 <RadzenImage Path="about_me.png" Style="width: 15rem; height: auto;"/>
                 <RadzenText TextStyle="TextStyle.H4" Style="width: 60%">
@@ -34,6 +34,29 @@
                     I have experience with front and back end development, IaC, automation, and systems programming.
                 </RadzenText>
             </RadzenStack>
+
+            <!-- Skills section -->
+            <RadzenStack Orientation="Orientation.Vertical" Style="width: 100%;">
+                <RadzenText TextStyle="TextStyle.H2" Text="Skills"/>
+                <RadzenCard class="rz-border-radius-4" Variant="Variant.Outlined" Style="width: 100%;">
+                    <!-- Skill Groupings -->
+                    <RadzenStack Orientation="Orientation.Vertical">
+                        <!--Languages -->
+                        <RadzenStack Orientation="Orientation.Vertical">
+                            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                                <span class="line"></span>
+                                <RadzenText TextStyle="TextStyle.H6" Text="Languages" Style="color: white;"/>
+                                <span class="line"></span>
+                            </RadzenStack>    
+                            <!--Language Cards-->
+                            <RadzenStack Orientation="Orientation.Horizontal">
+                                
+                            </RadzenStack>
+                        </RadzenStack>
+                    </RadzenStack>
+                </RadzenCard>
+            </RadzenStack>
+
         </RadzenStack>
     </RadzenStack>
 

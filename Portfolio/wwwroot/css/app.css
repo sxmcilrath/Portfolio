@@ -267,3 +267,9 @@ code {
   color: transparent;
 }
 
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc; /* can use #999 or theme-neutral */
+    opacity: 0.5;
+}

@@ -1,0 +1,19 @@
+@namespace Portfolio.Components
+
+<RadzenCard class="rz-py-0 rz-px-0" Style="background-color: rgb(40, 54, 60); overflow: hidden;">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems=" AlignItems.Center" JustifyContent=" JustifyContent.Center">
+        <RadzenText TextStyle="TextStyle.Body1" Text="@Skill" Style="color: white;"/>
+        <RadzenImage Path="@ImagePath" Style="width: 30px; height: auto;"/>
+    </RadzenStack>
+</RadzenCard>
+
+@code{
+
+[Parameter]
+public string Skill {get;set;}
+
+[Parameter]
+public string ImagePath {get;set;}
+
+
+}

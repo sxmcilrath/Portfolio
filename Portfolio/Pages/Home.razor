@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Portfolio.UIComponents;
+@using Portfolio.Components;
 
 <section id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 80%;">
@@ -50,7 +51,10 @@
                             </RadzenStack>    
                             <!--Language Cards-->
                             <RadzenStack Orientation="Orientation.Horizontal">
-                                
+                                @foreach(var pair in languages)
+                                {   
+                                    <SkillCard Skill="@pair.Key" ImagePath="@languages[pair.Key]"/>
+                                }
                             </RadzenStack>
                         </RadzenStack>
                     </RadzenStack>

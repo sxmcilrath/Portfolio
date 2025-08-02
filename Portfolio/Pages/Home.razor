@@ -19,7 +19,7 @@
     </RadzenStack>
 </section>
 
-<section id="about-me" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+<section id="about-me" style=" display: flex; align-items: center; justify-content: center;">
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
         <RadzenText
             class="gradient-text rz-pt-10"
@@ -29,11 +29,14 @@
         />
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="">
             <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 90%">
-                <RadzenImage Path="about_me.png" Style="width: 15rem; height: auto;"/>
-                <RadzenText TextStyle="TextStyle.H4" Style="width: 80%">
-                    Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
-                    I have experience with front and back end development, IaC, automation, and systems programming.
-                </RadzenText>
+                <RadzenImage Path="about_me.png" Style="width: 10rem; height: auto;"/>
+                <RadzenCard class="rz-border-radius-4" Style="width:80%">
+                    <RadzenText TextStyle="TextStyle.H4">
+                        Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
+                        I have experience with front and back end development, IaC, automation, and systems programming. 
+                        I have numerous contributions to in prod apps supporting real business operations, and I'm driven by opportunities to build software that solves meaningful problems.
+                    </RadzenText>
+                </RadzenCard>
             </RadzenStack>
 
             <!-- Skills section -->
@@ -113,3 +116,6 @@
     </RadzenStack>
     
 </section> 
+<section id="work">
+    <RadzenText TextStyle="TextStyle.H1" Text="Work"/>
+</section>

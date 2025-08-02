@@ -7,6 +7,16 @@ body {
   color: #ffffff;            /* ensures text is readable */
 }
 
+/* Hidden Scrollbar */
+body {
+  overflow-y: auto;
+  height: 100%;
+
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 h1:focus {
     outline: none;
 }

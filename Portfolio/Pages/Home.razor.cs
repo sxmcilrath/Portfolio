@@ -2,6 +2,17 @@ namespace Portfolio.Pages;
 
 public partial class Home
 {
+     private string[] roles = new[]
+    {
+        "Front End Dev",
+        "Back End Dev",
+        "Automation Dev",
+        "Research Assistant",
+        "Teacher's Assistant",
+        "Student Director",
+        "Club Vice President"
+    };
+
     private Dictionary<string, string> languages = new() {
         {"C#", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"},
         {"C", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},

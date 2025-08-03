@@ -236,78 +236,358 @@ code {
   }
 }
 
-/*Hero Section*/
-:root {
-  --color-primary: #f6aca2;
-  --color-secondary: #f49b90;
-  --color-tertiary: #f28b7d;
-  --color-quaternary: #f07a6a;
-  --color-quinary: #ee6352;
-}
+/*Jumpout text*/
 
-.text-shadows {
-  text-shadow:
-    3px 3px 0 var(--color-secondary),
-    6px 6px 0 var(--color-tertiary),
-    9px 9px 0 var(--color-quaternary),
-    12px 12px 0 var(--color-quinary);
-  font-family: 'Bungee', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: calc(2rem + 5vw);
-  text-align: center;
-  margin: 0;
-  color: var(--color-primary);
-  animation: shadows 1.8s ease-in infinite;
-  letter-spacing: 0.4rem;
-}
+  :root {
+    --color-primary: #f6aca2;
+    --color-secondary: #f49b90;
+    --color-tertiary: #f28b7d;
+    --color-quaternary: #f07a6a;
+    --color-quinary: #ee6352;
+  }
 
-@keyframes shadows {
-  0% {
-    text-shadow: none;
-  }
-  10% {
-    transform: translate(-3px, -3px);
-    text-shadow: 3px 3px 0 var(--color-secondary);
-  }
-  20% {
-    transform: translate(-6px, -6px);
-    text-shadow:
-      3px 3px 0 var(--color-secondary),
-      6px 6px 0 var(--color-tertiary);
-  }
-  30% {
-    transform: translate(-9px, -9px);
-    text-shadow:
-      3px 3px 0 var(--color-secondary),
-      6px 6px 0 var(--color-tertiary),
-      9px 9px 0 var(--color-quaternary);
-  }
-  40%, 50%, 60% {
-    transform: translate(-12px, -12px);
+  .text-shadows {
     text-shadow:
       3px 3px 0 var(--color-secondary),
       6px 6px 0 var(--color-tertiary),
       9px 9px 0 var(--color-quaternary),
       12px 12px 0 var(--color-quinary);
+    font-family: 'Bungee', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: calc(2rem + 5vw);
+    text-align: center;
+    margin: 0;
+    color: var(--color-primary);
+    animation: shadows 1.8s ease-in infinite;
+    letter-spacing: 0.4rem;
   }
-  70% {
-    text-shadow:
-      3px 3px 0 var(--color-secondary),
-      6px 6px 0 var(--color-tertiary),
-      9px 9px 0 var(--color-quaternary);
+
+  @keyframes shadows {
+    0% {
+      text-shadow: none;
+    }
+    10% {
+      transform: translate(-3px, -3px);
+      text-shadow: 3px 3px 0 var(--color-secondary);
+    }
+    20% {
+      transform: translate(-6px, -6px);
+      text-shadow:
+        3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary);
+    }
+    30% {
+      transform: translate(-9px, -9px);
+      text-shadow:
+        3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary),
+        9px 9px 0 var(--color-quaternary);
+    }
+    40%, 50%, 60% {
+      transform: translate(-12px, -12px);
+      text-shadow:
+        3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary),
+        9px 9px 0 var(--color-quaternary),
+        12px 12px 0 var(--color-quinary);
+    }
+    70% {
+      text-shadow:
+        3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary),
+        9px 9px 0 var(--color-quaternary);
+    }
+    80% {
+      text-shadow:
+        3px 3px 0 var(--color-secondary),
+        6px 6px 0 var(--color-tertiary);
+    }
+    90% {
+      text-shadow: 3px 3px 0 var(--color-secondary);
+    }
+    100% {
+      text-shadow: none;
+    }
   }
-  80% {
-    text-shadow:
-      3px 3px 0 var(--color-secondary),
-      6px 6px 0 var(--color-tertiary);
+
+/*Typewriter*/
+  .cursor {
+    position: relative;
+    width: 11ch;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Anonymous Pro', monospace;
+    color: white;
   }
-  90% {
-    text-shadow: 3px 3px 0 var(--color-secondary);
+
+  /* Animate with exactly 11 steps over a shorter duration */
+  .typewriter-animation {
+    animation:
+      typewriter 1.5s steps(11) 0s 1 normal both,  /* ← 1.5s total, 11 steps */
+      blinkingCursor 500ms steps(2) infinite normal;
   }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blinkingCursor {
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+  }
+
+/*Carousel*/
+  #container {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 2.25rem;    /* ~36px */
+    font-weight: bold;
+    position: relative;    /* change from fixed if you want it in-flow */
+    width: 100%;
+    text-align: center;
+  }
+
+  #flip {
+    display: inline-block;
+    height: 2.8rem;        /* ~45px + padding */
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  #flip > div > div {
+    padding: 0.25rem 0.75rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    color: #fff;
+    background: #4ec7f3;   /* primary slide color */
+  }
+
+/*aurora*/
+:root {
+  --bg: #000000;
+  --clr-1: #00c2ff;
+  --clr-2: #60a5fa;
+  --clr-3: #ffc640;
+  --clr-4: #fb923c;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.subtitle {
+}
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+
   100% {
-    text-shadow: none;
+    top: 0;
+    right: 0;
   }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+
+
+/* Animate the first inner div only */
+#flip div:first-child {
+  animation: show 7s linear infinite;
+}
+
+@keyframes show {
+  0%    { margin-top: calc(-2.5rem * 6); }   /* 6 items above */
+  5%    { margin-top: calc(-2.5rem * 5); }
+  19%   { margin-top: calc(-2.5rem * 5); }
+  24%   { margin-top: calc(-2.5rem * 4); }
+  38%   { margin-top: calc(-2.5rem * 4); }
+  43%   { margin-top: calc(-2.5rem * 3); }
+  57%   { margin-top: calc(-2.5rem * 3); }
+  62%   { margin-top: calc(-2.5rem * 2); }
+  76%   { margin-top: calc(-2.5rem * 2); }
+  81%   { margin-top: calc(-2.5rem * 1); }
+  95%   { margin-top: calc(-2.5rem * 1); }
+  100%  { margin-top: 0; }
 }
 
 

@@ -15,8 +15,8 @@
     </RadzenStack>
 </section>
 
-<section id="about-me" style=" display: flex; align-items: center; justify-content: center;">
-    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+<section id="about-me" style=" display: flex; align-items: center; justify-content: center; background-color: rgb(40, 54, 60)!important; padding-bottom: 1.5rem; border-radius: 0.8rem;">
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 75%">
         <div class="content">
             <h1 class="title">About Me
                 <div class="aurora">
@@ -27,10 +27,10 @@
                 </div>
             </h1>
          </div>
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="">
-            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 90%">
-                <RadzenImage Path="about_me.png" Style="width: 10rem; height: auto;"/>
-                <RadzenText TextStyle="TextStyle.H5" TextAlign="TextAlign.Start" Style="font-family: monospace; width: 80%; ">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="align-self: center;">
+            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="justify-self: center !important; align-self: center !important; max-width: 500px;">
+                <RadzenImage Path="about_me.png" Style="width: 8rem; height: auto;"/>
+                <RadzenText TextStyle="TextStyle.H6" TextAlign="TextAlign.Start" Style="font-family: monospace; line-height: 2rem; color: #121212; font-weight: 5rem;">
                     Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
                     I have experience with front and back end development, IaC, automation, and systems programming. 
                     I have numerous contributions to in prod apps supporting real business operations, and I'm driven by opportunities to build software that solves meaningful problems.
@@ -40,7 +40,7 @@
             <!-- Skills section -->
             <RadzenStack Orientation="Orientation.Vertical" Style="width: 100%; max-width: 25rem; height: 100%; min-height: 100%;">
                
-                <RadzenText TextStyle="TextStyle.H2" Text="Skills" Style="align-self: center;"/>
+                <RadzenText TextStyle="TextStyle.H2" Text="Skills" Style="align-self: center; color: #121212;"/>
                 <div class="skill-card-border">
                     <RadzenCard class="inner-card rz-border-radius-4" Variant="Variant.Filled" Style="width: 100%; min-width: 15rem;  background-color: #121212;">
                         <!-- Skill Groupings -->
@@ -114,7 +114,7 @@
     </RadzenStack>
     
 </section> 
-<section id="work">
+<section id="work" >
     <div class="content">
             <h1 class="title">Work 
                 <div class="aurora">
@@ -124,6 +124,8 @@
                 <div class="aurora__item"></div>
                 </div>
             </h1>
-         </div>
+    </div>
+
+
 </section>
 

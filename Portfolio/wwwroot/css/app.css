@@ -641,3 +641,10 @@ code {
     border-radius: 0.9rem;
 }
 
+.radzen-markdown ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+.radzen-markdown li {
+  margin-bottom: 0.5rem;
+}

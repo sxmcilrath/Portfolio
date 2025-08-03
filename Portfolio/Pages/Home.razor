@@ -30,7 +30,7 @@
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="align-self: center;">
             <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="justify-self: center !important; align-self: center !important; max-width: 500px;">
                 <RadzenImage Path="about_me.png" Style="width: 8rem; height: auto;"/>
-                <RadzenText TextStyle="TextStyle.H6" TextAlign="TextAlign.Start" Style="font-family: monospace; line-height: 2rem; color: #121212; font-weight: 5rem;">
+                <RadzenText TextStyle="TextStyle.H6" TextAlign="TextAlign.Start" Style="font-family: monospace; line-height: 2rem; color: white; font-weight: 5rem;">
                     Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
                     I have experience with front and back end development, IaC, automation, and systems programming. 
                     I have numerous contributions to in prod apps supporting real business operations, and I'm driven by opportunities to build software that solves meaningful problems.
@@ -40,7 +40,7 @@
             <!-- Skills section -->
             <RadzenStack Orientation="Orientation.Vertical" Style="width: 100%; max-width: 25rem; height: 100%; min-height: 100%;">
                
-                <RadzenText TextStyle="TextStyle.H2" Text="Skills" Style="align-self: center; color: #121212;"/>
+                <RadzenText TextStyle="TextStyle.H2" Text="Skills" Style="align-self: center; color: white"/>
                 <div class="skill-card-border">
                     <RadzenCard class="inner-card rz-border-radius-4" Variant="Variant.Filled" Style="width: 100%; min-width: 15rem;  background-color: #121212;">
                         <!-- Skill Groupings -->
@@ -114,7 +114,7 @@
     </RadzenStack>
     
 </section> 
-<section id="work" >
+<section id="work" style="min-height:100vh; padding-bottom: 1.5rem;">
     <div class="content">
             <h1 class="title">Work 
                 <div class="aurora">
@@ -125,7 +125,32 @@
                 </div>
             </h1>
     </div>
-
-
+    <div style="">
+        <WorkTimeline/>
+    </div>
+</section>
+<section id="projects">
+    <div class="content">
+        <h1 class="title">Projects 
+            <div class="aurora">
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            </div>
+        </h1>
+    </div>
+</section>
+<section id="school">
+    <div class="content">
+        <h1 class="title">School 
+            <div class="aurora">
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            </div>
+        </h1>
+    </div>
 </section>
 

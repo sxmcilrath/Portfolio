@@ -8,36 +8,47 @@
         <Items>
             <!--Software Developer-->
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointShadow="0" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50vh; max-width: 50%; margin-right:2rem;">
-                    @* <LabelContent>
-                        <RadzenText TextStyle="TextStyle.Body1" Text="MAY 2025 - AUG 2025"/>
-                    </LabelContent> *@
                     <PointContent ><RadzenImage Path="imgs/nm_logo.png" Style="width: 80%; height: auto;"/></PointContent>
                     <ChildContent>
-                        <RadzenCard class="rz-border-radius-3" Style="text-align: left; ">
-                            <RadzenMarkdown class="radzen-markdown" Text="@sdMarkdown" Style="color: #121212; font-family: monospace;"/> 
-                        </RadzenCard>
+                        <div class="skill-card-border work-card">
+                            <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
+                                <RadzenMarkdown class="radzen-markdown" Text="@sdMarkdown" Style="color: #121212; font-family: monospace;"/> 
+                            </RadzenCard>
+                        </div>
                     </ChildContent>
             </RadzenTimelineItem>
 
             <!--Research-->
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
-                @* <LabelContent>
-                    <RadzenText TextStyle=" TextStyle.Body1" Text="JAN 2025 - MAY 2025"/>
-                </LabelContent> *@
+                <ChildContent>
+                    <div class="skill-card-border work-card">
+                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
+                            <RadzenMarkdown class="radzen-markdown"   Text="@rsMarkdown"  Style="color: #121212; font-family: monospace;"/> 
+                        </RadzenCard>
+                    </div>
+                </ChildContent>
             </RadzenTimelineItem>
 
             <!--Automation-->
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
-                @* <LabelContent>
-                    <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2024 - AUG 2024"/>
-                </LabelContent> *@
+                <ChildContent>
+                    <div class="skill-card-border work-card">
+                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
+                            <RadzenMarkdown class="radzen-markdown"   Text="@atMarkdown"  Style="color: #121212; font-family: monospace;"/> 
+                        </RadzenCard>
+                    </div>
+                </ChildContent>
             </RadzenTimelineItem>
 
             <!--IT-->
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
-                @* <LabelContent>
-                    <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2023 - AUG 2023"/>
-                </LabelContent> *@
+                <ChildContent>
+                    <div class="skill-card-border work-card">
+                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
+                            <RadzenMarkdown class="radzen-markdown"   Text="@itMarkdown"  Style="color: #121212; font-family: monospace;"/> 
+                        </RadzenCard>
+                    </div>
+                </ChildContent>
             </RadzenTimelineItem>
         </Items>
     </RadzenTimeline>

@@ -14,6 +14,30 @@ public partial class WorkTimeline
         * Participating in an Agile DevOps environment, running CI/CD pipelines, and contributing to the SDLC.
         """;
 
+    private string rsMarkdown = """
+        **Research Assistant** ||  *Wheaton College*
+
+        * Worked alongside professor to migrate core components of a multichannel secret sharing protocol from C to Zig, leveraging Zig’s modern safety and concurrency features to enhance performance and maintainability.
+        * Utilized stream libraries to implement message sharing across machines versus across ports.
+        * Implemented custom multithreading iPerf tests to benchmark and improve sharing speeds and throughput.
+        """;
+
+    private string atMarkdown = """
+        **Automation Developer Intern** ||  *Northwestern Medicine*
+
+        * Developed Power Automation to retrieve and store requests from ServiceNow in Dataverse, and created a custom Power App to support CRUD operations, enhancing tracking efficiency for the team and manager. App still currently in prod and is used in all shareholder meetings.
+        * Developed within a team, a Power Page frontend for technicians to monitor app health and assisted backend team with data retrieval automations.
+        """;
+
+    private string itMarkdown = """
+        **IT Intern** ||  *STERIS/Hu-Friedy*
+
+        * Met expectations with high volume tickets by closing over 250 tickets that varied from user onboards, network failures, hardware issues, etc.
+        * Redesigned company's form workflows-resulting in cost savings of tens of thousands of dollars from the previous service provider, by self-teaching Power Automate.
+        * Interacted frequently with both STERIS and Hu-Friedy’s Active Directory as well as Azure and other Cloud services.
+        * Collaborated seamlessly in a team-oriented IT environment, maintaining consistent communication across team members.
+        """;
     private MarkupString HtmlContent =>
         new MarkupString(Markdown.ToHtml(sdMarkdown));
+
 }

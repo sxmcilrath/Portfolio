@@ -624,6 +624,9 @@ code {
 }
 
 .skill-card-border {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 5px;
     border-radius: 1rem;
     background: linear-gradient(270deg, #fb923c, #60a5fa, #fcd9a0);
@@ -758,4 +761,11 @@ code {
       min-width:50vh;
       max-width: 50%; 
       margin-right:2rem;
+    }
+
+    .work-card{
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
     }

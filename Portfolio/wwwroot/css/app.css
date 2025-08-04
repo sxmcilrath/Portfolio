@@ -729,3 +729,33 @@ code {
     transform: translate(0, -1em) rotate(-225deg);
   }
 }
+
+/*timeline*/
+    .timeline-scroll {
+      width: 100%;          /* fill the page */
+      overflow-x: auto;     /* allow horizontal scroll inside */
+      padding: 1rem 0;      /* optional breathing room */
+      scroll-snap-type: x mandatory; /* optional: snap each card to center */
+    }
+
+    .timeline-scroll .rz-timeline-item {
+      scroll-snap-align: center;     /* optional: makes each item snap to center */
+    }
+
+    /* Optional: style your scrollbar */
+    .timeline-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 15px;
+    }
+    .timeline-scroll::-webkit-scrollbar-thumb {
+      background: white;
+      border-radius: 3px;
+      width: 10px;
+    }
+
+    .rz-timeline-item{
+      flex:0 0 auto; 
+      min-width:50vh;
+      max-width: 50%; 
+      margin-right:2rem;
+    }

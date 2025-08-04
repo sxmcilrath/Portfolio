@@ -1,39 +1,44 @@
 @namespace Portfolio.Components
 
-<RadzenTimeline Orientation="Orientation.Horizontal" LinePosition="LinePosition.Center" Style="height:auto; max-height:80vh; justify-self: center;">
-    <Items>
-        <!--Software Developer-->
-        <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointShadow="0" PointSize="PointSize.Large" Style="min-width: 8    0%">
-                <LabelContent>
-                    <RadzenText TextStyle="TextStyle.Body1" Text="MAY 2025 - AUG 2025"/>
-                </LabelContent>
-                <PointContent ><RadzenImage Path="imgs/nm_logo.png" Style="width: 80%; height: auto;"/></PointContent>
-                <ChildContent>
-                    <RadzenCard Style="text-align: left;">
-                        <RadzenMarkdown class="radzen-markdown" Text="@sdMarkdown" Style="color: #121212; font-family: monospace;"/> 
-                    </RadzenCard>
-                </ChildContent>
-        </RadzenTimelineItem>
+<div class="timeline-scroll">
 
-        <!--Research-->
-        <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large">
-            <LabelContent>
-                <RadzenText TextStyle=" TextStyle.Body1" Text="JAN 2025 - MAY 2025"/>
-            </LabelContent>
-        </RadzenTimelineItem>
+    <RadzenTimeline Orientation="Orientation.Horizontal" LinePosition="LinePosition.Bottom" 
+        Style="display: flex; flex-wrap:nowrap;"
+    >
+        <Items>
+            <!--Software Developer-->
+            <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointShadow="0" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50vh; max-width: 50%; margin-right:2rem;">
+                    @* <LabelContent>
+                        <RadzenText TextStyle="TextStyle.Body1" Text="MAY 2025 - AUG 2025"/>
+                    </LabelContent> *@
+                    <PointContent ><RadzenImage Path="imgs/nm_logo.png" Style="width: 80%; height: auto;"/></PointContent>
+                    <ChildContent>
+                        <RadzenCard class="rz-border-radius-3" Style="text-align: left; ">
+                            <RadzenMarkdown class="radzen-markdown" Text="@sdMarkdown" Style="color: #121212; font-family: monospace;"/> 
+                        </RadzenCard>
+                    </ChildContent>
+            </RadzenTimelineItem>
 
-        <!--Automation-->
-        <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large">
-            <LabelContent>
-                <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2024 - AUG 2024"/>
-            </LabelContent>
-        </RadzenTimelineItem>
+            <!--Research-->
+            <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
+                @* <LabelContent>
+                    <RadzenText TextStyle=" TextStyle.Body1" Text="JAN 2025 - MAY 2025"/>
+                </LabelContent> *@
+            </RadzenTimelineItem>
 
-        <!--IT-->
-        <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large">
-            <LabelContent>
-                <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2023 - AUG 2023"/>
-            </LabelContent>
-        </RadzenTimelineItem>
-    </Items>
-</RadzenTimeline>
+            <!--Automation-->
+            <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
+                @* <LabelContent>
+                    <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2024 - AUG 2024"/>
+                </LabelContent> *@
+            </RadzenTimelineItem>
+
+            <!--IT-->
+            <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
+                @* <LabelContent>
+                    <RadzenText TextStyle=" TextStyle.Body1" Text="MAY 2023 - AUG 2023"/>
+                </LabelContent> *@
+            </RadzenTimelineItem>
+        </Items>
+    </RadzenTimeline>
+</div>

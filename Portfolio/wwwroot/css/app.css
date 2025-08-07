@@ -758,8 +758,8 @@ code {
 
     .rz-timeline-item{
       flex:0 0 auto; 
-      min-width:50vh;
-      max-width: 50%; 
+      min-width:350px !important;
+      max-width: 500px !important; 
       margin-right:2rem;
     }
 

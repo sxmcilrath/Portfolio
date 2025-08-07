@@ -1,4 +1,5 @@
 @namespace Portfolio.Components
+@using Portfolio.Components
 
 <div class="timeline-scroll">
 
@@ -10,12 +11,15 @@
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointShadow="0" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50vh; max-width: 50%; margin-right:2rem;">
                     <PointContent ><RadzenImage Path="imgs/nm_logo.png" Style="width: 80%; height: auto;"/></PointContent>
                     <ChildContent>
-                        <div class="skill-card-border work-card">
-                            <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
-                                <RadzenMarkdown class="radzen-markdown" Text="@sdMarkdown" Style="color: #121212; font-family: monospace;"/> 
-                            </RadzenCard>
-                        </div>
+                       <WorkCard 
+                            Bullets="@sdMarkdown" 
+                            Position="Software Developer" 
+                            Company="Northwestern Medicine"
+                            StartDate="MAY 2025"
+                            EndDate="AUG 2025"
+                        />
                     </ChildContent>
+
             </RadzenTimelineItem>
 
             <!--Research-->
@@ -24,11 +28,13 @@
                     <RadzenImage class="rz-border-radius-8" Path="imgs/wheaton_logo.png"/>
                 </PointContent>
                 <ChildContent>
-                    <div class="skill-card-border work-card">
-                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
-                            <RadzenMarkdown class="radzen-markdown"   Text="@rsMarkdown"  Style="color: #121212; font-family: monospace;"/> 
-                        </RadzenCard>
-                    </div>
+                    <WorkCard 
+                        Bullets="@rsMarkdown" 
+                        Position="Research Assistant" 
+                        Company="Wheaton College"
+                        StartDate="JAN 2025"
+                        EndDate="MAY 2025"
+                    />
                 </ChildContent>
             </RadzenTimelineItem>
 
@@ -36,22 +42,27 @@
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
                 <PointContent ><RadzenImage Path="imgs/nm_logo.png" Style="width: 80%; height: auto;"/></PointContent>
                 <ChildContent>
-                    <div class="skill-card-border work-card">
-                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
-                            <RadzenMarkdown class="radzen-markdown"   Text="@atMarkdown"  Style="color: #121212; font-family: monospace;"/> 
-                        </RadzenCard>
-                    </div>
+                    <WorkCard 
+                        Bullets="@atMarkdown" 
+                        Position="Automation Developer Intern" 
+                        Company="Northwestern Medicine"
+                        StartDate="MAY 2024"
+                        EndDate="AUG 2024"
+                    />
                 </ChildContent>
             </RadzenTimelineItem>
+
             <!--IT-->
             <RadzenTimelineItem PointVariant="Variant.Outlined" PointStyle="PointStyle.Info" PointSize="PointSize.Large" Style="flex:0 0 auto; min-width:50%; margin-right:2rem;">
                 <PointContent> <RadzenImage class="rz-border-radius-8" Path="imgs/huf_logo.jpeg" /> </PointContent>
                 <ChildContent>
-                    <div class="skill-card-border work-card">
-                        <RadzenCard class="work-card rz-border-radius-3" Style="text-align: left; ">
-                            <RadzenMarkdown class="radzen-markdown"   Text="@itMarkdown"  Style="color: #121212; font-family: monospace;"/> 
-                        </RadzenCard>
-                    </div>
+                    <WorkCard 
+                        Bullets="@itMarkdown" 
+                        Position="IT Intern" 
+                        Company="STERIS/Hu-Friedy"
+                        StartDate="MAY 2023"
+                        EndDate="AUG 2023"
+                    />
                 </ChildContent>
             </RadzenTimelineItem>
         </Items>

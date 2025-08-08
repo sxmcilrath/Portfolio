@@ -771,4 +771,242 @@ code {
     }
 
 
-    /*Work Card*/
+/* ---------------- Project Card (namespaced: pc-) ----------------- */
+/* Uses variable fallbacks so it respects your app's theme if you already have these vars */
+
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* card container */
+.pc-card {
+  background-color: var(--background-color, #18181B);
+  box-shadow:
+    0px var(--card-box-shadow-1-y, 3px) var(--card-box-shadow-1-blur, 6px) var(--card-box-shadow-1, rgba(0,0,0,0.05)),
+    0px var(--card-box-shadow-2-y, 8px) var(--card-box-shadow-2-blur, 15px) var(--card-box-shadow-2, rgba(0,0,0,0.1)),
+    0 0 0 1px var(--card-border-color, rgba(255,255,255,0.08));
+  padding: 56px 16px 16px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow .25s;
+  overflow: visible;
+}
+
+/* overlay background tint */
+.pc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background-color: var(--card-background-color, rgba(255,255,255,0.015));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* icon */
+.pc-icon {
+  z-index: 2;
+  position: relative;
+  display: table;
+  padding: 8px;
+}
+.pc-icon::after {
+  content: '';
+  position: absolute;
+  inset: 4.5px;
+  border-radius: 50%;
+  background-color: var(--card-icon-background-color, rgba(255,255,255,0.08));
+  border: 1px solid var(--card-icon-border-color, rgba(255,255,255,0.12));
+  backdrop-filter: blur(2px);
+  transition: background-color .25s, border-color .25s;
+  z-index: 0;
+}
+.pc-icon svg {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 24px;
+  height: 24px;
+  transform: translateZ(0);
+  color: var(--card-icon-color, #D4D4D8);
+  transition: color .25s;
+}
+
+/* headings and text (scoped) */
+.pc-card h4 {
+  z-index: 2;
+  position: relative;
+  margin: 12px 0 4px 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--card-label-color, #FFFFFF);
+}
+.pc-card p {
+  z-index: 2;
+  position: relative;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color, #A1A1AA);
+}
+
+/* shine element (big blurred radial gradient) */
+.pc-shine {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+  pointer-events: none;
+}
+.pc-shine::before {
+  content: '';
+  width: 150%;
+  padding-bottom: 150%;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 55%;
+  filter: blur(35px);
+  opacity: var(--card-shine-opacity, .1);
+  transform: translateX(-50%);
+  background-image: var(--card-shine-gradient, conic-gradient(from 205deg at 50% 50%, rgba(16,185,129,0) 0deg, #10B981 25deg, rgba(52,211,153,0.18) 295deg, rgba(16,185,129,0) 360deg));
+}
+
+/* animated background group */
+.pc-background {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%);
+  mask-image: radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%);
+  z-index: 1;
+}
+
+/* tiles container */
+.pc-tiles {
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+/* tile base */
+.pc-tile {
+  position: absolute;
+  background-color: var(--card-tile-color, rgba(16,185,129,0.05));
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-name: pc-tile-anim;
+  animation-play-state: paused; /* will run on hover */
+  opacity: 0;
+}
+
+/* timeline of delays */
+.pc-tile.pc-tile-4,
+.pc-tile.pc-tile-6,
+.pc-tile.pc-tile-10 { animation-delay: -2s; }
+.pc-tile.pc-tile-3,
+.pc-tile.pc-tile-5,
+.pc-tile.pc-tile-8 { animation-delay: -4s; }
+.pc-tile.pc-tile-2,
+.pc-tile.pc-tile-9 { animation-delay: -6s; }
+
+/* tile geometry (flattened) */
+.pc-tile.pc-tile-1 { top: 0; left: 0; height: 10%; width: 22.5%; }
+.pc-tile.pc-tile-2 { top: 0; left: 22.5%; height: 10%; width: 27.5%; }
+.pc-tile.pc-tile-3 { top: 0; left: 50%; height: 10%; width: 27.5%; }
+.pc-tile.pc-tile-4 { top: 0; left: 77.5%; height: 10%; width: 22.5%; }
+
+.pc-tile.pc-tile-5 { top: 10%; left: 0; height: 22.5%; width: 22.5%; }
+.pc-tile.pc-tile-6 { top: 10%; left: 22.5%; height: 22.5%; width: 27.5%; }
+.pc-tile.pc-tile-7 { top: 10%; left: 50%; height: 22.5%; width: 27.5%; }
+.pc-tile.pc-tile-8 { top: 10%; left: 77.5%; height: 22.5%; width: 22.5%; }
+
+.pc-tile.pc-tile-9  { top: 32.5%; left: 50%; height: 22.5%; width: 27.5%; }
+.pc-tile.pc-tile-10 { top: 32.5%; left: 77.5%; height: 22.5%; width: 22.5%; }
+
+/* tile keyframes (same behavior as original) */
+@keyframes pc-tile-anim {
+  0%, 12.5%, 100% { opacity: 1; }
+  25%, 82.5%     { opacity: 0; }
+}
+
+/* lines */
+.pc-line {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .35s;
+}
+.pc-line::before,
+.pc-line::after {
+  content: '';
+  position: absolute;
+  background-color: var(--card-line-color, #2A2B2C);
+  transition: transform .35s;
+}
+.pc-line::before { left: 0; right: 0; height: 1px; transform-origin: 0 50%; transform: scaleX(0); }
+.pc-line::after  { top: 0; bottom: 0; width: 1px; transform-origin: 50% 0; transform: scaleY(0); }
+
+/* specific line placements and delays */
+.pc-line.pc-line-1::before { top: 10%; }
+.pc-line.pc-line-1::after  { left: 22.5%; }
+.pc-line.pc-line-1::before,
+.pc-line.pc-line-1::after { transition-delay: .3s; }
+
+.pc-line.pc-line-2::before { top: 32.5%; }
+.pc-line.pc-line-2::after  { left: 50%; }
+.pc-line.pc-line-2::before,
+.pc-line.pc-line-2::after { transition-delay: .15s; }
+
+.pc-line.pc-line-3::before { top: 55%; }
+.pc-line.pc-line-3::after  { right: 22.5%; }
+
+/* hover state: activate shine, tiles, lines, and icon styles */
+.pc-card:hover {
+  box-shadow:
+    0px var(--card-hover-box-shadow-1-y, 5px) var(--card-hover-box-shadow-1-blur, 10px) var(--card-hover-box-shadow-1, rgba(0,0,0,0.04)),
+    0px var(--card-hover-box-shadow-2-y, 15px) var(--card-hover-box-shadow-2-blur, 25px) var(--card-hover-box-shadow-2, rgba(0,0,0,0.3)),
+    0 0 0 1px var(--card-hover-border-color, rgba(255,255,255,0.2));
+}
+
+/* icon hover visuals */
+.pc-card:hover .pc-icon::after {
+  background-color: var(--card-hover-icon-background-color, rgba(52,211,153,0.1));
+  border-color: var(--card-hover-icon-border-color, rgba(52,211,153,0.2));
+}
+.pc-card:hover .pc-icon svg {
+  color: var(--card-hover-icon-color, #34D399);
+}
+
+/* show shine on hover */
+.pc-card:hover .pc-shine { opacity: 1; transition-duration: .5s; transition-delay: 0s; }
+
+/* enable tiles on hover */
+.pc-card:hover .pc-tiles { opacity: 1; transition-delay: .25s; }
+.pc-card:hover .pc-tile { animation-play-state: running; opacity: 1; }
+
+/* reveal lines on hover */
+.pc-card:hover .pc-line { opacity: 1; transition-duration: .15s; }
+.pc-card:hover .pc-line::before { transform: scaleX(1); }
+.pc-card:hover .pc-line::after  { transform: scaleY(1); }
+
+.pc-card:hover .pc-line.pc-line-1::before,
+.pc-card:hover .pc-line.pc-line-1::after { transition-delay: 0s; }
+.pc-card:hover .pc-line.pc-line-2::before,
+.pc-card:hover .pc-line.pc-line-2::after { transition-delay: .15s; }
+.pc-card:hover .pc-line.pc-line-3::before,
+.pc-card:hover .pc-line.pc-line-3::after { transition-delay: .3s; }
+
+/* small helper if you keep a twitter link near page */
+.pc-twitter { position: fixed; right: 12px; bottom: 12px; z-index: 3; }
+.pc-twitter svg { width: 32px; height: 32px; fill: #fff; }

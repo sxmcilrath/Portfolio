@@ -270,6 +270,9 @@ code {
       transparent 360deg
     );
 
+    --accent: var(--rz-primary, #f97316);          /* fallback: orange-500 */
+    --bg: rgb(40,54,60);    
+
   }
 
   .text-shadows {
@@ -1167,4 +1170,77 @@ code {
 .pc-footer .pc-gh-btn--inline{
   position: static;            /* override any absolute position */
   margin-left:auto;            /* push it to the right */
+}
+
+/*proj hero section*/
+.projects-hero{
+  min-height: 100vh;
+  padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;                       /* centers the 2 rows + title block */
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* soft color blobs (blurred) */
+.projects-hero::before{
+  content:"";
+  position:absolute; inset:-35%;
+  background:
+    radial-gradient(40% 60% at 20% 20%, color-mix(in oklab, var(--accent) 30%, transparent), transparent 60%),
+    radial-gradient(40% 60% at 80% 30%, rgba(125,211,252,.18), transparent 60%),
+    radial-gradient(60% 60% at 50% 95%, rgba(34,197,94,.14), transparent 60%);
+  filter: blur(36px);
+  z-index:-2;
+}
+
+/* subtle grid + vignette */
+.projects-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, transparent, rgba(0,0,0,.28) 75%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 24px);
+  mask: radial-gradient(120% 120% at 50% 50%, #000 60%, transparent);
+  pointer-events:none;
+  z-index:-1;
+  opacity:.35;
+}
+
+/* TITLE */
+.projects-head{ width:min(1100px,92%); margin:0 auto 24px; }
+.projects-title{
+  margin:0;
+  font-size:clamp(28px,5vw,48px);
+  line-height:1.1;
+  letter-spacing:.3px;
+  color:#e6e6e6;
+  position:relative;
+  display:inline-block;
+}
+.projects-title span{
+  background: linear-gradient(90deg, var(--accent), #7dd3fc);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+}
+/* underline that fades to transparent */
+.projects-title::after{
+  content:"";
+  position:absolute; left:0; bottom:-8px;
+  height:2px; width:56%;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius:2px;
+  opacity:.85;
+}
+
+/* motion-respect */
+@media (prefers-reduced-motion: no-preference){
+  .projects-hero::before{ transition: transform .6s ease; }
+  .projects-hero:hover::before{ transform: scale(1.02); }
 }

@@ -243,7 +243,33 @@ code {
     --color-secondary: #f49b90;
     --color-tertiary: #f28b7d;
     --color-quaternary: #f07a6a;
-    --color-quinary: #ee6352;
+    --color-quinary: #ee6352; 
+    /* Accent colors */
+    --accent-primary: #ff7a18; /* modern orange */
+    --accent-primary-light: rgba(255, 122, 24, 0.2);
+    --accent-primary-glow: rgba(255, 122, 24, 0.35);
+
+    --accent-secondary: #18a4ff; /* bright blue */
+    --accent-secondary-light: rgba(24, 164, 255, 0.2);
+    --accent-secondary-glow: rgba(24, 164, 255, 0.35);
+
+    /* Neutral colors */
+    --text-color: #A1A1AA;
+    --card-label-color: #E5E7EB;
+    --background-color: #18181B;
+    --card-border-color: rgba(255,255,255,0.08);
+    --card-icon-color: #D4D4D8;
+    --card-line-color: #2A2B2C;
+
+    /* Shine gradient */
+    --card-shine-gradient: conic-gradient(
+      from 205deg at 50% 50%,
+      transparent 0deg,
+      var(--accent-primary) 25deg,
+      var(--accent-secondary-light) 295deg,
+      transparent 360deg
+    );
+
   }
 
   .text-shadows {
@@ -897,7 +923,7 @@ code {
 /* tile base */
 .pc-tile {
   position: absolute;
-  background-color: var(--card-tile-color, rgba(16,185,129,0.05));
+  background-color: var(--accent-primary-light, rgba(16,185,129,0.05));
   animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-name: pc-tile-anim;
@@ -976,11 +1002,11 @@ code {
 
 /* icon hover visuals */
 .pc-card:hover .pc-icon::after {
-  background-color: var(--card-hover-icon-background-color, rgba(52,211,153,0.1));
-  border-color: var(--card-hover-icon-border-color, rgba(52,211,153,0.2));
+  background-color: var(--accent-primary-light);
+  border-color: var(--accent-primary-glow);
 }
 .pc-card:hover .pc-icon svg {
-  color: var(--card-hover-icon-color, #34D399);
+  color: var(--accent-primary);
 }
 
 /* show shine on hover */
@@ -1022,12 +1048,12 @@ code {
     0 0 0 1px var(--card-border-color,rgba(255,255,255,.06));
 }
 .pc-card:hover .pc-badge{
-  border-color: rgba(52,211,153,.35) !important;
+  border-color: var(--accent-primary-glow) !important;
   box-shadow:
     0 2px 12px rgba(0,0,0,.25),
-    0 0 0 1px rgba(52,211,153,.35),
-    0 0 12px rgba(52,211,153,.18);
-  color:#34D399 !important;
+    0 0 0 1px var(--accent-primary-glow),
+    0 0 12px var(--accent-primary-light);
+  color: var(--accent-primary) !important;
 }
 
 
@@ -1095,20 +1121,19 @@ code {
 .pc-gh-btn svg{ color: currentColor; opacity:.95; }
 
 .pc-gh-btn:hover{
-  border-color: rgba(52,211,153,.35);
-  color: #34D399;
+  border-color: var(--accent-primary-glow);
+  color: var(--accent-primary);
   box-shadow:
-    0 4px 14px rgba(52,211,153,.25),
-    0 0 0 1px rgba(52,211,153,.4),
-    0 0 14px rgba(52,211,153,.18);
-  transform: translateY(-1px);
+    0 4px 14px var(--accent-primary-light),
+    0 0 0 1px var(--accent-primary-glow),
+    0 0 14px var(--accent-primary-light);
 }
 
 .pc-gh-btn:focus-visible{
   outline: none;
   box-shadow:
-    0 0 0 2px rgba(16,185,129,.45),
-    0 0 0 4px rgba(16,185,129,.25);
+    0 0 0 2px var(--accent-secondary),
+    0 0 0 4px var(--accent-secondary-glow);
 }
 
 .pc-divider {
@@ -1142,5 +1167,3 @@ code {
   position: static;            /* override any absolute position */
   margin-left:auto;            /* push it to the right */
 }
-
-

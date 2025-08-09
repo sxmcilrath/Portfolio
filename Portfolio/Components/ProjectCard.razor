@@ -4,15 +4,18 @@
 
 @* Partially grabbed from https://prismic.io/blog/css-animation-examples#1-simple-text-animation *@
 <div class="pc-card">
+    <RadzenBadge class="pc-badge" Text="@DateLabel" />
+
     <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
         <span class="pc-icon" aria-hidden="true"> 
             @Icon
         </span>
         <RadzenText Text="@Title" TextStyle="TextStyle.H4" />
     </RadzenStack>
-    
-    <RadzenMarkdown Text="@Description" Style="font-size: 14px; line-height: 1.7; color: var(--text-color, #A1A1AA);" />
 
+    <RadzenMarkdown Text="@Description" Style="font-size: 14px; line-height: 1.7; color: var(--text-color, #A1A1AA); text-align: left;" />
+
+    
     <SkillScroller Skills="@Skills"/>
 
     <div class="pc-shine" aria-hidden="true"></div>
@@ -55,4 +58,7 @@
 
     [Parameter]
     public RenderFragment Icon {get;set;}
+
+    [Parameter]
+    public string DateLabel {get; set;} = "MAY 2025";
 }

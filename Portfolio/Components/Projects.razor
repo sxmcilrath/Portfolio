@@ -1,0 +1,35 @@
+@namespace Portfolio.Components
+@using Portfolio.Components.Models
+
+
+<RadzenStack Orientation="Orientation.Horizontal">
+    <!-- KFC proj --> 
+    <ProjectCard Skills="@kfcSkills" Title="Kernel Free Concurrency" Description="@kfcDesc">
+        <Icon>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18 L6 12 
+                M18 18 L18 12 
+                M6 12 C6 8, 12 8, 12 4 L12 4 L10 2 
+                M18 12 C18 8, 12 8, 12 4 L12 4 L14 2 
+                M10 2 L12 4 L8 4 Z 
+                M14 2 L12 4 L16 4 Z"/>
+            </svg>
+        </Icon>
+    </ProjectCard>
+    
+</RadzenStack>
+
+@code
+{
+    public List<Skill> kfcSkills = new List<Skill>
+    {
+        new Skill { Name = "Linux", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+        new Skill { Name = "C" , Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+        new Skill { Name = "POSIX", Image = ""}
+    };
+
+    public string kfcDesc = @"
+- Engineered a user-level threading library that supports a many-to-many threading model using ucontext APIs and POSIX threads.
+- Developed custom thread control blocks to manage thread contexts, dynamic thread IDs, and first-come-first-served scheduling.";
+
+}

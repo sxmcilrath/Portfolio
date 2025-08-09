@@ -22,16 +22,7 @@
 
 <section id="about-me" style=" display: flex; align-items: center; justify-content: center; background-color: rgb(40, 54, 60)!important; padding-bottom: 1.5rem; border-radius: 0.8rem;">
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 75%">
-        <div class="content">
-            <h1 class="title">About Me
-                <div class="aurora">
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                </div>
-            </h1>
-         </div>
+        <h1 class="title">About Me</h1> 
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="align-self: center;">
             <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="justify-self: center !important; align-self: center !important; max-width: 500px;">
                 <RadzenImage Path="about_me.png" Style="width: 8rem; height: auto;"/>
@@ -120,56 +111,16 @@
     
 </section> 
 <section id="work" style="min-height:100vh; padding-bottom: 1.5rem;">
-    <div class="content">
-            <h1 class="title">Work 
-                <div class="aurora">
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                </div>
-            </h1>
-    </div>
+    <h1 class="title">Work History</h1>
     <div style="">
         <WorkTimeline />
     </div>
 </section>
 <section id="projects" style="height: 100vh; background-color: rgb(40, 54, 60)!important;">
-    <div class="content">
-        <h1 class="title">Projects 
-            <div class="aurora">
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            </div>
-        </h1>
-    </div>
-    @* KFC proj *@
-    <ProjectCard Skills="@kfcSkills" Title="Kernel Free Concurrency" Description="@kfcDesc">
-        <Icon>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 18 L6 12 
-                M18 18 L18 12 
-                M6 12 C6 8, 12 8, 12 4 L12 4 L10 2 
-                M18 12 C18 8, 12 8, 12 4 L12 4 L14 2 
-                M10 2 L12 4 L8 4 Z 
-                M14 2 L12 4 L16 4 Z"/>
-            </svg>
-        </Icon>
-    </ProjectCard>
+    <h1 class="title">Projects</h1>
+    <Projects />
 </section>
 <section id="school">
-    <div class="content">
-        <h1 class="title">School 
-            <div class="aurora">
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            <div class="aurora__item"></div>
-            </div>
-        </h1>
-
-    </div>
+    <h1 class="title">School</h1>
 </section>
 

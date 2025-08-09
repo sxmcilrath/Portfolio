@@ -48,16 +48,6 @@ public partial class Home
         { "Power Automate", "" }
     };
 
-    public List<Skill> kfcSkills = new List<Skill>
-    {
-        new Skill { Name = "Linux", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
-        new Skill { Name = "C" , Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
-        new Skill { Name = "POSIX", Image = ""}
-    };
 
-    public string kfcDesc = """
-    - Engineered a user-level threading library that supports a many-to-many threading model using ucontext APIs and POSIX threads.
-    - Developed custom thread control blocks to manage thread contexts, dynamic thread IDs, and first-come-first-served scheduling.
-    """;
 
 }

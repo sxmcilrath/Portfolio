@@ -20,96 +20,83 @@
     </RadzenStack>
 </section>
 
-<section id="about-me" style=" display: flex; align-items: center; justify-content: center; background-color: rgb(40, 54, 60)!important; padding-bottom: 1.5rem; border-radius: 0.8rem;">
-    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 75%">
-        <h1 class="title">About Me</h1> 
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent=" JustifyContent.SpaceBetween" Style="align-self: center;">
-            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="justify-self: center !important; align-self: center !important; max-width: 500px;">
-                <RadzenImage Path="about_me.png" Style="width: 8rem; height: auto;"/>
-                <RadzenText TextStyle="TextStyle.H6" TextAlign="TextAlign.Start" Style="font-family: monospace; line-height: 2rem; color: white; font-weight: 5rem;">
-                    Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics. 
-                    I have experience with front and back end development, IaC, automation, and systems programming. 
-                    I have numerous contributions to in prod apps supporting real business operations, and I'm driven by opportunities to build software that solves meaningful problems.
-                </RadzenText>
-            </RadzenStack>
+<section id="about-me" class="about-hero">
+  <div class="about-head">
+    <h1 class="about-title"><span>About Me</span></h1>
+  </div>
 
-            <!-- Skills section -->
-            <RadzenStack Orientation="Orientation.Vertical" Style="width: 100%; max-width: 25rem; height: 100%; min-height: 100%;">
-               
-                <RadzenText TextStyle="TextStyle.H2" Text="Skills" Style="align-self: center; color: white"/>
-                <div class="skill-card-border">
-                    <RadzenCard class="inner-card rz-border-radius-4" Variant="Variant.Filled" Style="width: 100%; min-width: 15rem;  background-color: #121212;">
-                        <!-- Skill Groupings -->
-                        <RadzenStack Orientation="Orientation.Vertical">
-                            <!--Languages -->
-                            <RadzenStack Orientation="Orientation.Vertical">
-                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-                                    <span class="line"></span>
-                                    <RadzenText TextStyle="TextStyle.H6" Text="Languages" Style="color: white;"/>
-                                    <span class="line"></span>
-                                </RadzenStack>    
-                                <!--Language Cards-->
-                                <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
-                                    @foreach(var pair in languages)
-                                    {   
-                                        <SkillCard Skill="@pair.Key" ImagePath="@languages[pair.Key]"/>
-                                    }
-                                </RadzenStack>
-                            </RadzenStack>
-                            <!--Cloud-->
-                            <RadzenStack Orientation="Orientation.Vertical">
-                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-                                    <span class="line"></span>
-                                    <RadzenText TextStyle="TextStyle.H6" Text="Cloud & Infrastructure" Style="color: white;"/>
-                                    <span class="line"></span>
-                                </RadzenStack>    
-                                <!--Language Cards-->
-                                <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
-                                    @foreach(var pair in cloud)
-                                    {   
-                                        <SkillCard Skill="@pair.Key" ImagePath="@cloud[pair.Key]"/>
-                                    }
-                                </RadzenStack>
-                            </RadzenStack>
-                            <!--Frameworks-->
-                            <RadzenStack Orientation="Orientation.Vertical">
-                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-                                    <span class="line"></span>
-                                    <RadzenText TextStyle="TextStyle.H6" Text="Frameworks" Style="color: white;"/>
-                                    <span class="line"></span>
-                                </RadzenStack>    
-                                <!--Cards-->
-                                <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
-                                    @foreach(var pair in frameworks)
-                                    {   
-                                        <SkillCard Skill="@pair.Key" ImagePath="@frameworks[pair.Key]"/>
-                                    }
-                                </RadzenStack>
-                            </RadzenStack>
-                             <!--Tools-->
-                            <RadzenStack Orientation="Orientation.Vertical">
-                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-                                    <span class="line"></span>
-                                    <RadzenText TextStyle="TextStyle.H6" Text="Tools" Style="color: white;"/>
-                                    <span class="line"></span>
-                                </RadzenStack>    
-                                <!--Cards-->
-                                <RadzenStack Orientation="Orientation.Horizontal"Style="flex-wrap: wrap !important;">
-                                    @foreach(var pair in tools)
-                                    {   
-                                        <SkillCard Skill="@pair.Key" ImagePath="@tools[pair.Key]"/>
-                                    }
-                                </RadzenStack>
-                            </RadzenStack>
-                        </RadzenStack>
-                    </RadzenCard>
-                </div>
-            </RadzenStack>
-
-        </RadzenStack>
+  <div class="about-content">
+    <!-- Left: avatar + text -->
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" class="about-bio">
+      <RadzenImage Path="about_me.png" class="about-avatar" />
+      <RadzenText TextAlign="TextAlign.Center" class="about-text">
+        Hi, my name is Samuel McIlrath and I am a May 2026 grad majoring in CS with a minor in Mathematics.
+        I have experience with front and back end development, IaC, automation, and systems programming.
+        I have numerous contributions to in‑prod apps supporting real business operations, and I'm driven by opportunities to build software that solves meaningful problems.
+      </RadzenText>
     </RadzenStack>
-    
-</section> 
+
+    <!-- Right: skills (your existing card, just wrapped) -->
+    <RadzenStack Orientation="Orientation.Vertical" class="about-skills">
+      <RadzenText TextStyle="TextStyle.H2" Text="Skills" class="about-skills-title" />
+      <div class="skill-card-border">
+        <RadzenCard class="inner-card about-card" Variant="Variant.Filled">
+          <!-- your existing groups unchanged -->
+          <RadzenStack Orientation="Orientation.Vertical">
+            <!-- Languages -->
+            <RadzenStack Orientation="Orientation.Vertical">
+              <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                <span class="line"></span>
+                <RadzenText TextStyle="TextStyle.H6" Text="Languages" class="about-subhead"/>
+                <span class="line"></span>
+              </RadzenStack>
+              <RadzenStack Orientation="Orientation.Horizontal" Style="flex-wrap: wrap !important;">
+                @foreach (var pair in languages) { <SkillCard Skill="@pair.Key" ImagePath="@languages[pair.Key]" /> }
+              </RadzenStack>
+            </RadzenStack>
+
+            <!-- Cloud & Infra -->
+            <RadzenStack Orientation="Orientation.Vertical">
+              <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                <span class="line"></span>
+                <RadzenText TextStyle="TextStyle.H6" Text="Cloud & Infrastructure" class="about-subhead"/>
+                <span class="line"></span>
+              </RadzenStack>
+              <RadzenStack Orientation="Orientation.Horizontal" Style="flex-wrap: wrap !important;">
+                @foreach (var pair in cloud) { <SkillCard Skill="@pair.Key" ImagePath="@cloud[pair.Key]" /> }
+              </RadzenStack>
+            </RadzenStack>
+
+            <!-- Frameworks -->
+            <RadzenStack Orientation="Orientation.Vertical">
+              <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                <span class="line"></span>
+                <RadzenText TextStyle="TextStyle.H6" Text="Frameworks" class="about-subhead"/>
+                <span class="line"></span>
+              </RadzenStack>
+              <RadzenStack Orientation="Orientation.Horizontal" Style="flex-wrap: wrap !important;">
+                @foreach (var pair in frameworks) { <SkillCard Skill="@pair.Key" ImagePath="@frameworks[pair.Key]" /> }
+              </RadzenStack>
+            </RadzenStack>
+
+            <!-- Tools -->
+            <RadzenStack Orientation="Orientation.Vertical">
+              <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                <span class="line"></span>
+                <RadzenText TextStyle="TextStyle.H6" Text="Tools" class="about-subhead"/>
+                <span class="line"></span>
+              </RadzenStack>
+              <RadzenStack Orientation="Orientation.Horizontal" Style="flex-wrap: wrap !important;">
+                @foreach (var pair in tools) { <SkillCard Skill="@pair.Key" ImagePath="@tools[pair.Key]" /> }
+              </RadzenStack>
+            </RadzenStack>
+          </RadzenStack>
+        </RadzenCard>
+      </div>
+    </RadzenStack>
+  </div>
+</section>
+
 <section id="work" style="min-height:100vh; padding-bottom: 1.5rem;">
     <h1 class="title">Work History</h1>
     <div style="">

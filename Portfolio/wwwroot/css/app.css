@@ -271,7 +271,8 @@ code {
     );
 
     --accent: var(--rz-primary, #f97316);          /* fallback: orange-500 */
-    --bg: rgb(40,54,60);    
+    --bg: rgb(40,54,60); 
+    --text: #eaeaea;   
 
   }
 
@@ -651,27 +652,131 @@ code {
     background-color: #ccc; /* can use #999 or theme-neutral */
     opacity: 0.5;
 }
-
-.skill-card-border {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 5px;
-    border-radius: 1rem;
-    background: linear-gradient(270deg, #fb923c, #60a5fa, #fcd9a0);
-    background-size: 600% 600%;
-    animation: gradientBorder 8s ease infinite;
+/* Section backdrop: blobs + subtle grid */
+.about-hero{
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  padding: 72px 16px;
+  border-radius: 12px;
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
 }
 
-@keyframes gradientBorder {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.about-hero::before{
+  content:"";
+  position:absolute; inset:-35%;
+  background:
+    radial-gradient(40% 60% at 20% 15%, color-mix(in oklab, var(--accent) 28%, transparent), transparent 60%),
+    radial-gradient(40% 60% at 80% 25%, rgba(125,211,252,.18), transparent 60%),
+    radial-gradient(60% 60% at 50% 95%, rgba(34,197,94,.14), transparent 60%);
+  filter: blur(36px);
+  z-index:-2;
 }
 
-.inner-card {
-    border-radius: 0.9rem;
+.about-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, transparent, rgba(0,0,0,.28) 75%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 24px);
+  mask: radial-gradient(120% 120% at 50% 50%, #000 60%, transparent);
+  opacity:.35;
+  z-index:-1;
 }
+
+/* Title */
+.about-head{ width:min(1100px, 92%); margin:0 auto; }
+.about-title{
+  margin:0 0 8px;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.1;
+  color: var(--text);
+  position: relative;
+  display:inline-block;
+}
+.about-title span{
+  background: linear-gradient(90deg, var(--accent), #7dd3fc);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.about-title::after{
+  content:"";
+  position:absolute; left:0; bottom:-8px; width:56%; height:2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius:2px; opacity:.85;
+}
+
+/* Layout: two columns, collapses to one on mobile */
+.about-content{
+  width:min(1100px, 92%);
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  height: 100%;
+}
+@media (max-width: 900px){
+  .about-content{ grid-template-columns: 1fr; }
+}
+
+/* Left column */
+.about-bio{
+  background: rgba(255,255,255,.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 24px;
+  gap: 16px;
+  height: -webkit-fill-available;
+}
+.about-avatar{
+  width: 8rem; height:auto; border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.about-text{
+  color: #d6d6d6 !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 2rem;
+  font-size: larger !important;
+}
+
+/* Right column (skills) */
+.about-skills-title{ align-self:center; color: var(--text) !important; }
+.about-card{
+  background: rgba(18,18,18,.7) !important;  /* glassy black */
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 6px 22px rgba(0,0,0,.35);
+  border-radius: 14px;
+}
+.about-subhead{ color:#fff !important; }
+
+/* Existing helpers you had */
+.line{ flex:1; height:1px; background:#ccc; opacity:.35; border-radius:1px; }
+.skill-card-border{
+  display:flex; flex-direction:column; height:100%; padding:6px; border-radius:16px;
+  background: linear-gradient(270deg, #fb923c, #60a5fa, #fcd9a0);
+  background-size: 600% 600%;
+  animation: gradientBorder 8s ease infinite;
+}
+.inner-card{ border-radius: 14px; }
+
+@keyframes gradientBorder{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Motion polish (optional) */
+@media (prefers-reduced-motion:no-preference){
+  .about-hero::before{ transition: transform .6s ease; }
+  .about-hero:hover::before{ transform: scale(1.02); }
+}
+
 
 .radzen-markdown ul {
   list-style-type: disc;

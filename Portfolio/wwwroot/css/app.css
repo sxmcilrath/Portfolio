@@ -816,6 +816,7 @@ code {
   overflow: visible;
 
   max-width: 400px;
+  height: 340px;
 }
 
 /* overlay background tint */

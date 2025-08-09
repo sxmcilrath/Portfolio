@@ -2,23 +2,17 @@
 @using Portfolio.UIComponents;
 @using Portfolio.Components;
 
-<section id="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
-    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 80%;">
-        <p class="cursor typewriter-animation" style="margin-bottom: 2rem;">
-      Hi, I’m Sam
-    </p>
-        <RadzenText
-            class="
-                animation-container
-                animate__animated
-                animate__fadeInUp
-                animate__delay-2s"
-            TextStyle="TextStyle.H2"
-            Text="I'm a Full Stack Developer studying Computer Science!"
-            TextAlign="TextAlign.Center"
-            Style="width: 80%; font-family: monospace;"/>
-    </RadzenStack>
+<section id="hero" class="hero-landing" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="width: 80%;">
+    <p class="cursor typewriter-animation" style="margin-bottom: 2rem;">Hi, I’m Sam</p>
+    <RadzenText TextStyle="TextStyle.H2"
+                Text="I'm a Full Stack Developer studying Computer Science!"
+                TextAlign="TextAlign.Center"
+                class="hero-sub" />
+  </RadzenStack>
 </section>
+
+
 
 <section id="about-me" class="about-hero">
   <div class="about-head">

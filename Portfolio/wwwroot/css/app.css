@@ -1065,3 +1065,82 @@ code {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); } /* move one full list width */
 }
+
+/* GitHub chip — glassy, pill, isolated hover glow */
+.pc-gh-btn{
+
+  /* sit under your date chip; adjust if needed */
+
+  z-index:3;
+
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:.35rem .6rem;
+  border-radius:9999px;
+
+  font-size:.72rem; font-weight:600; letter-spacing:.02em;
+  color:var(--card-label-color, #E5E7EB);
+  text-decoration:none;
+
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 2px 10px rgba(0,0,0,.25),
+    0 0 0 1px var(--card-border-color,rgba(255,255,255,.06));
+  transition: box-shadow .25s, color .25s, border-color .25s, transform .15s;
+}
+
+.pc-gh-btn svg{ color: currentColor; opacity:.95; }
+
+.pc-gh-btn:hover{
+  border-color: rgba(52,211,153,.35);
+  color: #34D399;
+  box-shadow:
+    0 4px 14px rgba(52,211,153,.25),
+    0 0 0 1px rgba(52,211,153,.4),
+    0 0 14px rgba(52,211,153,.18);
+  transform: translateY(-1px);
+}
+
+.pc-gh-btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(16,185,129,.45),
+    0 0 0 4px rgba(16,185,129,.25);
+}
+
+.pc-divider {
+  width: 100%;
+  height: 2px;
+  margin: 12px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  border: none;
+}
+
+/* Make the whole card a column flexbox */
+.pc-card{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Footer row sticks to the bottom */
+.pc-footer{
+  margin-top:auto;             /* pushes footer to bottom */
+  gap:12px;
+}
+
+/* Let scroller take available space; keep GitHub button at the end */
+.pc-footer .skills-wrapper{ flex:1 1 auto; min-width:0; }
+.pc-footer .pc-gh-btn--inline{
+  position: static;            /* override any absolute position */
+  margin-left:auto;            /* push it to the right */
+}
+
+

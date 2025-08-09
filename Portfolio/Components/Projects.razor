@@ -4,7 +4,13 @@
 
 <RadzenStack Orientation="Orientation.Horizontal">
     <!-- KFC proj --> 
-    <ProjectCard Skills="@kfcSkills" Title="Kernel Free Concurrency" Description="@kfcDesc">
+    <ProjectCard 
+        Skills="@kfcSkills" 
+        Title="Kernel Free Concurrency" 
+        Description="@kfcDesc"
+        DateLabel="APRIL 2025 - MAY 2025"
+        RepoUrl="https://github.com/samuelmcilrath/Kernel-Free-Concurrency">
+
         <Icon>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 18 L6 12 
@@ -16,6 +22,26 @@
             </svg>
         </Icon>
     </ProjectCard>
+
+    <!--Stock Tracker -->
+    <ProjectCard
+        Skills="@stockSkills"
+        Title="Stock Tracker"
+        Description="@stockDesc"
+        DateLabel="FEB 2025 - MAR 2025"
+        RepoUrl="https://github.com/sxmcilrath/StockTracker/tree/nasdaqflow"
+    >
+        <Icon>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3v18h18" />
+                <polyline points="6 15 10 10 14 14 20 6" />
+                <path d="M20 6 L20 10 M20 6 L16 6" />
+            </svg>
+        </Icon>
+    </ProjectCard>
+        
     
 </RadzenStack>
 
@@ -28,8 +54,24 @@
         new Skill { Name = "POSIX", Image = ""}
     };
 
+
     public string kfcDesc = @"
 - Engineered a user-level threading library that supports a many-to-many threading model using ucontext APIs and POSIX threads.
 - Developed custom thread control blocks to manage thread contexts, dynamic thread IDs, and first-come-first-served scheduling.";
 
+        public List<Skill> stockSkills = new List<Skill>
+    {
+        new Skill { Name = "ASP .NET Core (Blazor)", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-plain.svg" },
+        new Skill { Name = "C#", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"},
+        new Skill { Name = "HTML", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/htmx/htmx-original.svg"},
+        new Skill { Name = "CSS", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"}, 
+        new Skill { Name = "PostgreSQL", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"},
+        new Skill { Name = "Docker", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg"},
+        new Skill { Name = "REST API" , Image = "" },
+    };
+
+    public string stockDesc = @"
+- Developed an automated system that retrieves and processes stock data from Nasdaq’s API, updating a Dockerized PostgreSQL database using Entity Framework Core.
+- Integrated SendGrid-based email alerts to notify users when stock volume thresholds are crossed, enabling proactive market monitoring.
+- Currently in progress to redo with Azure resources...";
 }

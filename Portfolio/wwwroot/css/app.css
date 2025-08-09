@@ -847,7 +847,7 @@ code {
   transition: background-color .25s, border-color .25s;
   z-index: 0;
 }
-.pc-icon svg {
+.pc-icon svg, .pc-icon img {
   position: relative;
   z-index: 2;
   display: block;

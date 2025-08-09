@@ -1,46 +1,92 @@
 @namespace Portfolio.Components
 @using Portfolio.Components.Models
 
+<RadzenCarousel PagerPosition="PagerPosition.Bottom" PagerOverlay="false" ButtonShade="Shade.Default" Auto="false" Style="height: 120vh;">
+    <Items>
+        <RadzenCarouselItem>
+            <RadzenStack Orientation=" Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent=" JustifyContent.Center" Style="flex-wrap: wrap !important;">
+                <ProjectCard
+                    Skills="@kfcSkills" 
+                    Title="Kernel Free Concurrency" 
+                    Description="@kfcDesc"
+                    DateLabel="APRIL 2025 - MAY 2025"
+                    RepoUrl="https://github.com/samuelmcilrath/Kernel-Free-Concurrency">
 
+                    <Icon>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 18 L6 12 
+                            M18 18 L18 12 
+                            M6 12 C6 8, 12 8, 12 4 L12 4 L10 2 
+                            M18 12 C18 8, 12 8, 12 4 L12 4 L14 2 
+                            M10 2 L12 4 L8 4 Z 
+                            M14 2 L12 4 L16 4 Z"/>
+                        </svg>
+                    </Icon>
+                </ProjectCard>
+                <!--Savor-->
+                <ProjectCard
+              
+              
+                    Title="Savor - Spotify Web App"
+                    Description="@savorDesc"
+                    Skills="@savorSkills"
+                    DateLabel="JAN 2024 - MAY 2024 "
+                    RepoUrl="https://github.com/KevinYu3214/Savor">
+                    <Icon>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer circle -->
+                            <circle cx="12" cy="12" r="10" />
+                            <!-- First arc -->
+                            <path d="M8 8.5c2.5-1 6-1 8.5 0" />
+                            <!-- Second arc -->
+                            <path d="M8.5 12c2-0.8 4.8-0.8 6.8 0" />
+                            <!-- Third arc -->
+                            <path d="M9 15.5c1.5-0.6 3.5-0.6 5 0" />
+                        </svg>
+                    </Icon>
+                </ProjectCard>
+                <!--Stock Tracker -->
+                    <ProjectCard
+                        Skills="@stockSkills"
+                        Title="Stock Tracker"
+                        Description="@stockDesc"
+                        DateLabel="FEB 2025 - MAR 2025"
+                        RepoUrl="https://github.com/sxmcilrath/StockTracker/tree/nasdaqflow"
+                    >
+                        <Icon>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18" />
+                                <polyline points="6 15 10 10 14 14 20 6" />
+                                <path d="M20 6 L20 10 M20 6 L16 6" />
+                            </svg>
+                        </Icon>
+                    </ProjectCard>
+                    <!--Soccer Predictor -->
+                    <ProjectCard
+                        Title="Footballer Transfer Value Predictor"
+                        Description="@soccDesc"
+                        Skills="@soccSkills"
+                        DateLabel="APR 2025 - MAY 2025"
+                        RepoUrl="@soccUrl">
+                        <Icon>
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#ffffff" d="M255.03 33.813c-1.834-.007-3.664-.007-5.5.03-6.73.14-13.462.605-20.155 1.344.333.166.544.32.47.438L204.78 75.063l73.907 49.437-.125.188 70.625.28L371 79.282 342.844 52c-15.866-6.796-32.493-11.776-49.47-14.78-12.65-2.24-25.497-3.36-38.343-3.407zM190.907 88.25l-73.656 36.78-13.813 98.407 51.344 33.657 94.345-43.438 14.875-76.5-73.094-48.906zm196.344.344l-21.25 44.5 36.75 72.72 62.063 38.905 11.312-21.282c.225.143.45.403.656.75-.77-4.954-1.71-9.893-2.81-14.782-6.446-28.59-18.59-55.962-35.5-79.97-9.07-12.872-19.526-24.778-31.095-35.5l-20.125-5.342zm-302.656 23c-6.906 8.045-13.257 16.56-18.938 25.5-15.676 24.664-26.44 52.494-31.437 81.312C31.783 232.446 30.714 246.73 31 261l20.25 5.094 33.03-40.5L98.75 122.53l-14.156-10.936zm312.719 112.844l-55.813 44.75-3.47 101.093 39.626 21.126 77.188-49.594 4.406-78.75-.094.157-61.844-38.783zm-140.844 6.406l-94.033 43.312-1.218 76.625 89.155 57.376 68.938-36.437 3.437-101.75-66.28-39.126zm-224.22 49.75c.91 8.436 2.29 16.816 4.156 25.094 6.445 28.59 18.62 55.96 35.532 79.968 3.873 5.5 8.02 10.805 12.374 15.938l-9.374-48.156.124-.032-27.03-68.844-15.782-3.968zm117.188 84.844l-51.532 8.156 10.125 52.094c8.577 7.49 17.707 14.332 27.314 20.437 14.612 9.287 30.332 16.88 46.687 22.594l62.626-13.69-4.344-31.124-90.875-58.47zm302.437.5l-64.22 41.25-42 47.375 4.408 6.156c12.027-5.545 23.57-12.144 34.406-19.72 23.97-16.76 44.604-38.304 60.28-62.97 2.51-3.947 4.87-7.99 7.125-12.092zm-122.78 97.656l-79.94 9.625-25.968 5.655c26.993 4 54.717 3.044 81.313-2.813 9.412-2.072 18.684-4.79 27.75-8.062l-3.156-4.406z"></path></g></svg>
+                        </Icon>
+                    </ProjectCard>
+            </RadzenStack>
+        </RadzenCarouselItem>
+        <RadzenCarouselItem>
+            
+        </RadzenCarouselItem>
+    </Items>
+</RadzenCarousel>
 <RadzenStack Orientation="Orientation.Horizontal">
     <!-- KFC proj --> 
-    <ProjectCard 
-        Skills="@kfcSkills" 
-        Title="Kernel Free Concurrency" 
-        Description="@kfcDesc"
-        DateLabel="APRIL 2025 - MAY 2025"
-        RepoUrl="https://github.com/samuelmcilrath/Kernel-Free-Concurrency">
+    
 
-        <Icon>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 18 L6 12 
-                M18 18 L18 12 
-                M6 12 C6 8, 12 8, 12 4 L12 4 L10 2 
-                M18 12 C18 8, 12 8, 12 4 L12 4 L14 2 
-                M10 2 L12 4 L8 4 Z 
-                M14 2 L12 4 L16 4 Z"/>
-            </svg>
-        </Icon>
-    </ProjectCard>
-
-    <!--Stock Tracker -->
-    <ProjectCard
-        Skills="@stockSkills"
-        Title="Stock Tracker"
-        Description="@stockDesc"
-        DateLabel="FEB 2025 - MAR 2025"
-        RepoUrl="https://github.com/sxmcilrath/StockTracker/tree/nasdaqflow"
-    >
-        <Icon>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 3v18h18" />
-                <polyline points="6 15 10 10 14 14 20 6" />
-                <path d="M20 6 L20 10 M20 6 L16 6" />
-            </svg>
-        </Icon>
-    </ProjectCard>
         
     
 </RadzenStack>
@@ -74,4 +120,91 @@
 - Developed an automated system that retrieves and processes stock data from Nasdaq’s API, updating a Dockerized PostgreSQL database using Entity Framework Core.
 - Integrated SendGrid-based email alerts to notify users when stock volume thresholds are crossed, enabling proactive market monitoring.
 - Currently in progress to redo with Azure resources...";
+
+    public string soccDesc =@"
+- In a Jupyter Notebook, worked in a team to analyze the relationship between player stats and transfer value for soccer players.
+- Built multiple linear regression models via backward elimination, improving model fit and validating assumptions with residual analysis.
+- Applied exploratory data analysis and correlation heatmaps to identify key predictors, using Matplotlib and Seaborn to help us visualize.";
+
+    public string soccUrl = "https://github.com/AbrahamKAustin/Key-Determinants-of-Soccer-FW-Value/blob/main/Goal_To_Transfer_Value_New.ipynb";
+    public List<Skill> soccSkills = new List<Skill>
+    {
+        new Skill { Name = "Python",           Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        new Skill { Name = "Jupyter Notebook", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" },
+        new Skill { Name = "Pandas",           Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" },
+        new Skill { Name = "NumPy",            Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" },
+        new Skill { Name = "Matplotlib",       Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" },
+        new Skill { Name = "Seaborn",          Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/seaborn/seaborn-original.svg" },
+        new Skill { Name = "scikit-learn",     Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" },
+        new Skill { Name = "Statsmodels",      Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" } // no official icon; reuse Python or omit
+    };
+
+    //forest fire model
+    public string fireDesc = @"
+- In a Jupyter Notebook, modeled forest-fire burned area from meteorological and fuel metrics (FFMC, DMC, DC, ISI, temp, RH, wind, rain).
+- Standardized features and addressed skew via log transforms; evaluated Linear, Ridge, Lasso, and MLP regressors (low R² led us to reframe the task).
+- Recast the problem as binary classification (area > threshold) and trained KNN, Logistic Regression, SVM, and MLP; reached ~0.80 test accuracy at a 10 ha threshold.
+- Visualized distributions and correlations; used PCA for dimensionality insight and validated results with confusion summaries.";
+
+    public string fireUrl = ""; // TODO: add your Colab/Repo link
+
+    public List<Skill> fireSkills = new List<Skill>
+    {
+        new Skill { Name = "Python",            Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        new Skill { Name = "Jupyter Notebook",  Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" },
+        new Skill { Name = "Pandas",            Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" },
+        new Skill { Name = "NumPy",             Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" },
+        new Skill { Name = "scikit-learn",      Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" },
+        new Skill { Name = "TensorFlow",        Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" }
+    };
+
+    //Dispatch Manager
+    public string dispatchDesc = @"
+- Built a Blazor Server CRUD app for a trucking company with role-based flows and secure, parameterized MySQL queries.
+- Implemented dashboards and popups for editing driver info, weekly reports, hiring/firing mechanics, and assigning mechanics to maintenance jobs.
+- Composed report views with multi-table joins and date filters to surface all models.
+- Structured navigation and state via DI, async/await, and componentization.";
+
+    public List<Skill> dispatchSkills = new List<Skill>
+    {
+        new Skill { Name = "C#",          Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+        new Skill { Name = ".NET / Blazor", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" },
+        new Skill { Name = "MySQL",       Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        new Skill { Name = "SQL",         Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" }, // generic SQL, reuse MySQL icon
+        new Skill { Name = "Bootstrap",   Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
+        new Skill { Name = "HTML",       Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        new Skill { Name = "CSS",        Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+        new Skill { Name = "Git",         Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+    };
+
+    //Proxy 
+    public string proxyDesc = @"
+- Developed a multi-threaded HTTP proxy in C, handling concurrent client requests with LRU caching.
+- Optimized memory and I/O operations, reducing response time under high load. 
+- Parsed and modified HTTP headers for forwarding requests while maintaining compliance.   ";
+
+    public List<Skill> proxySkill = new(){
+        new Skill { Name = "Linux", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+        new Skill { Name = "C" , Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+        new Skill { Name = "POSIX", Image = ""}, 
+        new Skill { Name = "Vim", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vim/vim-original.svg"},
+        new Skill { Name = "Bash", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vim/vim-original.svg"}
+    };
+
+    //Savor
+    public string savorDesc = @"
+- Worked with a team to build a dynamic web app using React, Firebase, and the Spotify API, allowing users to generate personalized playlists, rank favorite songs, and track music statistics.
+- Designed responsive user interfaces with custom CSS for an engaging and intuitive experience.";   
+
+    public List<Skill> savorSkills = new List<Skill>
+{
+    new Skill { Name = "JavaScript", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    new Skill { Name = "React", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    new Skill { Name = "Firebase", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+    new Skill { Name = "HTML", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    new Skill { Name = "SCSS", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+    new Skill { Name = "Spotify API", Image = "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" },
+    new Skill { Name = "GitHub", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }
+};
+
 }

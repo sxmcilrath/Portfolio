@@ -1172,6 +1172,13 @@ code {
   margin-left:auto;            /* push it to the right */
 }
 
+#projects .rz-carousel, 
+#projects .rz-carousel-items {
+  max-width: min(1100px, 92vw);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
 /*proj hero section*/
 .projects-hero{
   min-height: 100vh;
@@ -1185,6 +1192,9 @@ code {
   background: var(--bg);
   overflow: hidden;
   border-radius: 1rem;
+  align-self: center;
+  overflow: clip !important;
+  contain: layout paint !important;
 }
 
 /* soft color blobs (blurred) */

@@ -1,29 +1,19 @@
 @namespace Portfolio.Components
+@using Portfolio.Components.Models
 
-<div class="pc-grid">
-  <div class="pc-card">
-    <span class="pc-icon" aria-hidden="true">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.5 3.5C14.5 3.5 14.5 5.5 12 5.5C9.5 5.5 9.5 3.5 9.5 3.5H7.5L4.20711 6.79289C3.81658 7.18342 3.81658 7.81658 4.20711 8.20711L6.5 10.5V20.5H17.5V10.5L19.7929 8.20711C20.1834 7.81658 20.1834 7.18342 19.7929 6.79289L16.5 3.5H14.5Z"
-        />
-      </svg>
-    </span>
 
-    <h4>Products</h4>
+@* Partially grabbed from https://prismic.io/blog/css-animation-examples#1-simple-text-animation *@
+<div class="pc-card">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+        <span class="pc-icon" aria-hidden="true"> 
+            @Icon
+        </span>
+        <RadzenText Text="@Title" TextStyle="TextStyle.H4" />
+    </RadzenStack>
+    
+    <RadzenMarkdown Text="@Description" Style="font-size: 14px; line-height: 1.7; color: var(--text-color, #A1A1AA);" />
 
-    <p>
-      Standard chunk of Lorem Ipsum used since the 1500s is showed below
-      for those interested.
-    </p>
+    <SkillScroller Skills="@Skills"/>
 
     <div class="pc-shine" aria-hidden="true"></div>
 
@@ -47,6 +37,22 @@
       <div class="pc-line pc-line-2"></div>
       <div class="pc-line pc-line-3"></div>
     </div>
-  </div>
+</div>
 
-  </div>
+
+@code{
+    [Parameter]
+    public List<Skill> Skills {get;set;}
+
+    [Parameter]
+    public string Title {get; set;} 
+
+    [Parameter]
+    public string Description {get;set;}
+
+    [Parameter]
+    public string Link {get;set;}
+
+    [Parameter]
+    public RenderFragment Icon {get;set;}
+}

@@ -774,13 +774,6 @@ code {
 /* ---------------- Project Card (namespaced: pc-) ----------------- */
 /* Uses variable fallbacks so it respects your app's theme if you already have these vars */
 
-.pc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 240px);
-  gap: 32px;
-  position: relative;
-  z-index: 1;
-}
 
 /* card container */
 .pc-card {
@@ -795,6 +788,8 @@ code {
   position: relative;
   transition: box-shadow .25s;
   overflow: visible;
+
+  max-width: 400px;
 }
 
 /* overlay background tint */
@@ -1010,3 +1005,39 @@ code {
 /* small helper if you keep a twitter link near page */
 .pc-twitter { position: fixed; right: 12px; bottom: 12px; z-index: 3; }
 .pc-twitter svg { width: 32px; height: 32px; fill: #fff; }
+
+
+/*Skill Scroller*/
+/* Wrapper stays the viewport clip */
+.skills-wrapper{
+  --scroll-time: 30s;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  overflow: hidden;
+  /* optional fade edges */
+  mask-image: linear-gradient(to right, transparent, #000 20%, #000 80%, transparent);
+  /* let content define height; remove the fixed 3rem */
+}
+
+/* The moving strip */
+.skills-track{
+  display: flex;
+  align-items: center;
+  gap: 15px;                 /* <-- your uniform spacing */
+  width: max-content;        /* shrink-wrap to children */
+  animation: skills-marquee var(--scroll-time) linear infinite;
+}
+
+/* Each card should not flex/stretch */
+.skill{
+  flex: 0 0 auto;
+}
+
+/* Pause on hover (optional) */
+/* .skills-wrapper:hover .skills-track { animation-play-state: paused; } */
+
+@keyframes skills-marquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* move one full list width */
+}

@@ -1,9 +1,10 @@
 namespace Portfolio.Pages;
 
+using Portfolio.Components.Models;
 public partial class Home
 {
-     private string[] roles = new[]
-    {
+    private string[] roles = new[]
+   {
         "Front End Dev",
         "Back End Dev",
         "Automation Dev",
@@ -40,12 +41,23 @@ public partial class Home
     private Dictionary<string, string> tools = new()
     {
         { "Linux (Bash)", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
-        { "MAMP", "" }, 
+        { "MAMP", "" },
         { "PostgreSQL", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
         { "Postman", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
         { "Swagger", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" }, // decent fallback
         { "Power Automate", "" }
     };
 
+    public List<Skill> kfcSkills = new List<Skill>
+    {
+        new Skill { Name = "Linux", Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+        new Skill { Name = "C" , Image = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+        new Skill { Name = "POSIX", Image = ""}
+    };
+
+    public string kfcDesc = """
+    - Engineered a user-level threading library that supports a many-to-many threading model using ucontext APIs and POSIX threads.
+    - Developed custom thread control blocks to manage thread contexts, dynamic thread IDs, and first-come-first-served scheduling.
+    """;
 
 }

@@ -1,0 +1,24 @@
+@using Portfolio.Components
+@using Portfolio.Components.Models
+
+<div class="skills-wrapper">
+  <div class="skills-track">
+    @foreach (var s in Skills)
+    {
+      <div class="skill"><SkillCard Skill="@s.Name" ImagePath="@s.Image" /></div>
+    }
+    @* duplicate for seamless loop *@
+    @foreach (var s in Skills)
+    {
+      <div class="skill" aria-hidden="true"><SkillCard Skill="@s.Name" ImagePath="@s.Image" /></div>
+    }
+  </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public List<Skill> Skills {get;set;}
+
+
+}

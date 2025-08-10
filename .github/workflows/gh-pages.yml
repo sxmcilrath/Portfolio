@@ -1,0 +1,63 @@
+name: Deploy Blazor WASM to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]   # ← change if your default branch isn't main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'   # match your project’s target
+
+      - name: Publish (Release)
+        run: dotnet publish -c Release -o build
+
+      - name: Prepare site (404 + .nojekyll + ensure base href)
+        run: |
+          SITE_DIR="build/wwwroot"
+          # Safety: ensure the site dir exists
+          test -d "$SITE_DIR"
+
+          # 1) SPA fallback: GitHub Pages uses 404.html for unknown routes
+          cp "$SITE_DIR/index.html" "$SITE_DIR/404.html"
+
+          # 2) Disable Jekyll processing
+          touch "$SITE_DIR/.nojekyll"
+
+          # 3) Ensure <base href> matches repo name (owner.github.io/<repo>/)
+          REPO="${{ github.event.repository.name }}"
+          INDEX="$SITE_DIR/index.html"
+          # Replace any existing <base href="/something/"> with /<repo>/
+          sed -i -E "s|<base href=\"/[^\"]*/\">|<base href=\"/${REPO}/\">|g" "$INDEX"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/wwwroot
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

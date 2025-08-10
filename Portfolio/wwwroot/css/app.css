@@ -1002,6 +1002,7 @@ code {
     animation: gradientBorder 8s ease infinite;
     flex: 1 1 auto;
     display: flex;
+    height: 100%;
 }
 
 .work-card-inner {
@@ -1011,7 +1012,7 @@ code {
     backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     font-family: monospace;
     color: white;
     transition: transform 0.25s ease, box-shadow 0.25s ease;

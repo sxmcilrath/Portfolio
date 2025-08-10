@@ -1,36 +1,31 @@
 @namespace Portfolio.Components
 
-<div class="skill-card-border work-card" style="font-family: monospace;">
-    <RadzenCard class="work-card rz-border-radius-3 rz-py-2 rz-px-2" Style="text-align: left; ">
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems=" AlignItems.Center">
-            <RadzenLabel Text="@StartDate" Style="font-weight: bold; font-style: italic; color: #121212;"/>
-            <span class="line" style="background-color: #121212;"></span>
-            <RadzenLabel Text="@EndDate" Style="font-weight: bold; font-style: italic; color: #121212;"/>
-        </RadzenStack>
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
-            <RadzenBadge Text="@Position" Style="font-weight: bold; font-size: large;"/>
-            <RadzenLabel Text="@Company" Style="font-weight: bold; font-style: italic; color: #121212; align-self: center;"/>
-        </RadzenStack>
-        <RadzenCard class="rz-border-radius-2 rz-shadow-3 rz-py-2 rz-px-2 work-card" Style="background-color: #121212;">
-            <RadzenMarkdown class="radzen-markdown" Text="@Bullets" Style="font-family: monospace;"/> 
-        </RadzenCard>
-    </RadzenCard>
+<div class="work-card-outer">
+    <div class="work-card-inner">
+        <!-- Date row -->
+        <div class="work-dates">
+            <span>@StartDate</span>
+            <span class="work-divider"></span>
+            <span>@EndDate</span>
+        </div>
+
+        <!-- Position + Company -->
+        <div class="work-header">
+            <h3>@Position</h3>
+            <span class="company">@Company</span>
+        </div>
+
+        <!-- Description -->
+        <div class="work-details">
+            <RadzenMarkdown class="radzen-markdown" Text="@Bullets"/>
+        </div>
+    </div>
 </div>
 
-@code
-{
-    [Parameter]
-    public string Bullets {get; set;}
-
-    [Parameter]
-    public string Position {get; set;}
-
-    [Parameter]
-    public string Company {get; set;}
-
-    [Parameter]
-    public string StartDate {get; set;}
-
-    [Parameter]
-    public string EndDate {get; set;}
+@code {
+    [Parameter] public string Bullets { get; set; }
+    [Parameter] public string Position { get; set; }
+    [Parameter] public string Company { get; set; }
+    [Parameter] public string StartDate { get; set; }
+    [Parameter] public string EndDate { get; set; }
 }

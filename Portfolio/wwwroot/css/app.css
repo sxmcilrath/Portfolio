@@ -966,7 +966,7 @@ code {
 
 /*timeline*/
     .timeline-scroll {
-      width: 100%;          /* fill the page */
+      width: 95vw;          /* fill the page */
       overflow-x: auto;     /* allow horizontal scroll inside */
       padding: 1rem 0;      /* optional breathing room */
       scroll-snap-type: x mandatory; /* optional: snap each card to center */
@@ -994,12 +994,81 @@ code {
       margin-right:2rem;
     }
 
-    .work-card{
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch;
-    }
+.work-card-outer {
+    padding: 2px; /* space for gradient border */
+    border-radius: 1rem;
+    background: linear-gradient(270deg, #fb923c, #60a5fa, #fcd9a0);
+    background-size: 600% 600%;
+    animation: gradientBorder 8s ease infinite;
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.work-card-inner {
+    background: rgba(24, 24, 27, 0.9); /* matches project card grey */
+    border-radius: 0.9rem;
+    padding: 1.25rem;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: monospace;
+    color: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card-inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4),
+                0 0 12px rgba(255,255,255,0.08);
+}
+
+.work-dates {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #d4d4d8;
+    gap: 0.75rem;
+}
+
+.work-divider {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255,255,255,0.15);
+}
+
+.work-header {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-header h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    color: #f3f4f6;
+}
+
+.company {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+}
+
+.work-details {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 
 /* ---------------- Project Card (namespaced: pc-) ----------------- */

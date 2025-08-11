@@ -1,0 +1,103 @@
+@namespace Portfolio.Components
+
+<section id="education" class="edu-section">
+  <RadzenStack Orientation="Orientation.Horizontal"
+               AlignItems="AlignItems.Stretch"
+               JustifyContent="JustifyContent.Center"
+               class="edu-layout"
+               Style="gap:24px; flex-wrap:wrap;">
+
+    <!-- LEFT: School + Timeline -->
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" class="edu-left">
+        <RadzenImage Path="imgs/Wheaton_logo.png" class="edu-logo" />
+
+        <div class="work-header" style="font-family: 'Courier New', Courier, monospace;">
+            <h3>Wheaton College</h3>
+            <span class="company">B.S. in Computer Science</span>
+            <span class="company">Minor in Mathematics</span>
+            <span class="company">3.96 GPA</span>
+        </div>
+      <RadzenTimeline Orientation="Orientation.Horizontal" class="edu-timeline">
+        <Items>
+          <RadzenTimelineItem PointVariant="Variant.Filled" PointSize="PointSize.Large" PointStyle="PointStyle.Primary"
+                              Style="width:auto; margin-right:0;">
+            <PointContent>
+                <svg fill="#ffffff" style="width:90%" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M128.7,32.2c0-13,10.5-23.5,23.5-23.5s23.5,10.5,23.5,23.5s-10.5,23.5-23.5,23.5S128.7,45.2,128.7,32.2z M87.5,135 l-12.2-2.5c-4.1,2.8-6.5,4.3-10.6,7l-12.1,60.3l21,4.2L87.5,135z M184.8,291.6c7.6-1.8,12.4-9.4,10.6-17l-13.9-60.2 c-0.5-2.2-1.5-4.2-2.9-5.9l-35.4-42.5l8.8-41.1l-62.3,37.8L79,214.6l-33.7,56c-4,6.7-1.9,15.4,4.8,19.4l0,0c6.7,4,15.4,1.9,19.4-4.8 l35-58.1c0.8-1.4,1.4-2.9,1.7-4.5l9.3-45.5l39.2,47.1l13.1,56.9C169.6,288.7,177.2,293.4,184.8,291.6L184.8,291.6z M256.3,97.9 l-0.2,0.2v0l0,0l-49.9,42.2L183.9,118h-41.1l-50.1,30.3l14.5-67.7c3.1-14.3,17.2-23.5,31.5-20.4c14.4,3.1,23.5,17.2,20.4,31.5 l-1.1,4.3h8.3l51.5-43.5l16,18.9l22.2-13.7v40L256.3,97.9z M245.6,97L217,63.2L178.2,96H195c6.1,0,11,4.9,11,11 c0,6-4.8,10.9-10.9,11l12,11.5L245.6,97z"></path> </g></svg>
+            </PointContent>
+            <ChildContent>
+                <h3 style="font-family: 'Courier New', Courier, monospace; font-weight: bold;">AUG 2022</h3>
+            </ChildContent>
+          </RadzenTimelineItem>
+
+          <RadzenTimelineItem PointVariant="Variant.Filled" PointSize="PointSize.Large" PointStyle="PointStyle.Secondary"
+                              Style="width:auto; margin-right:0;">
+            <PointContent>
+                <svg height="200px" style="width: 85%;" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g> <path class="st0" d="M473.61,63.16L276.16,2.927C269.788,0.986,263.004,0,256.001,0c-7.005,0-13.789,0.986-20.161,2.927 L38.386,63.16c-3.457,1.064-5.689,3.509-5.689,6.25c0,2.74,2.232,5.186,5.691,6.25l91.401,27.88v77.228 c0.023,39.93,13.598,78.284,38.224,107.981c11.834,14.254,25.454,25.574,40.483,33.633c15.941,8.564,32.469,12.904,49.124,12.904 c16.646,0,33.176-4.34,49.126-12.904c22.597-12.143,42.04-31.646,56.226-56.39c14.699-25.683,22.471-55.155,22.478-85.224v-78.214 l45.244-13.804v64.192c-6.2,0.784-11.007,6.095-11.007,12.5c0,5.574,3.649,10.404,8.872,12.011l-9.596,63.315 c-0.235,1.576,0.223,3.168,1.262,4.386c1.042,1.204,2.554,1.902,4.148,1.902h36.273c1.592,0,3.104-0.699,4.148-1.91 c1.036-1.203,1.496-2.803,1.262-4.386l-9.596-63.307c5.223-1.607,8.872-6.436,8.872-12.011c0-6.405-4.81-11.716-11.011-12.5V81.544 l19.292-5.885c3.457-1.064,5.691-3.517,5.691-6.25C479.303,66.677,477.069,64.223,473.61,63.16z M257.62,297.871 c-10.413,0-20.994-2.842-31.448-8.455c-16.194-8.649-30.908-23.564-41.438-42.011c-4.854-8.478-8.796-17.702-11.729-27.445 c60.877-10.776,98.51-49.379,119.739-80.97c10.242,20.776,27.661,46.754,54.227,58.648c-3.121,24.984-13.228,48.812-28.532,67.212 c-8.616,10.404-18.773,18.898-29.375,24.573C278.606,295.029,268.025,297.871,257.62,297.871z"></path> <path class="st0" d="M373.786,314.23l-1.004-0.629l-110.533,97.274L151.714,313.6l-1.004,0.629 c-36.853,23.036-76.02,85.652-76.02,156.326v0.955l0.846,0.45C76.291,472.365,152.428,512,262.249,512 c109.819,0,185.958-39.635,186.712-40.038l0.846-0.45v-0.955C449.808,399.881,410.639,337.265,373.786,314.23z"></path> </g> </g></svg>
+            </PointContent>
+            <ChildContent>
+                <h3 style="font-family: 'Courier New', Courier, monospace; font-weight: bold;">AUG 2026</h3>
+            </ChildContent>
+          </RadzenTimelineItem>
+        </Items>
+      </RadzenTimeline>
+    </RadzenStack>
+
+   <!-- RIGHT: Card (courses + roles) -->
+<div class="edu-card-outer">
+  <div class="edu-card">
+    <div class="edu-card-title">Relevant Courses</div>
+    <div class="edu-tags">
+      <span class="tag">Discrete Math</span>
+      <span class="tag">Object‑Oriented Design</span>
+      <span class="tag">Intro to Computer Systems</span>
+      <span class="tag">Linear Algebra</span>
+      <span class="tag">Software Development</span>
+      <span class="tag">Data Structures & Algorithms</span>
+      <span class="tag">Database Management</span>
+      <span class="tag">Operating Systems</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">Networking (In‑Progress)</span>
+      <span class="tag">Computational Linguistics (In‑Progress)</span>
+    </div>
+
+    <div class="edu-card-title">On‑Campus Roles</div>
+
+    <!-- Role cards (full width) -->
+    <div class="role-cards">
+        <!-- TA card -->
+        <div class="role-card">
+            <div class="role-icon" aria-hidden="true">
+            <!-- mortarboard / teaching icon -->
+                <svg style="width: 80%;" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 28.054 28.054" xml:space="preserve" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#ffffff;" d="M27.961,1.867v11.204c0,0.319-0.258,0.578-0.578,0.578H12.144c-0.319,0-0.578-0.259-0.578-0.578 v-0.885l1.156-0.775v1.082h14.082V2.444H12.721v4.229c-0.051,0.039-0.106,0.073-0.154,0.117l-0.162,0.112 c-0.195-0.51-0.492-0.912-0.839-1.242V1.867c0-0.319,0.26-0.578,0.578-0.578h15.239C27.703,1.289,27.961,1.547,27.961,1.867z M14.316,9.461l0.692-0.464h-0.001c0.001-0.004,0.003-0.004,0.005-0.007c0.352-0.349,0.406-0.868,0.188-1.277l5.599-3.799 l-0.254-0.375l-5.646,3.83c-0.177-0.128-0.375-0.209-0.583-0.216c-0.296-0.01-0.597,0.09-0.823,0.317c0,0-0.005,0.006-0.007,0.006 l-0.138,0.096l-1.254,0.856V8.064c-0.233-2.769-3.442-2.728-3.442-2.728h-1.39L6.094,7.258L4.92,5.337H3.587 c-3.621,0.068-3.493,2.727-3.493,2.727v6.206h0.002c0.001,0.016-0.002,0.035-0.002,0.048c0,0.591,0.477,1.066,1.066,1.066 c0.587,0,1.064-0.477,1.064-1.066c0-0.013,0-0.032-0.002-0.048h0.002V8.53H2.89L2.882,26.613c0,0.795,0.646,1.441,1.438,1.441 c0.795,0,1.439-0.646,1.439-1.441v-11.67H6.4v11.683l0.012,0.013c0.01,0.781,0.646,1.415,1.432,1.415 c0.789,0,1.431-0.643,1.431-1.432L9.271,8.5h0.693v1.888c0,0.002,0,0.007,0,0.009c0,0.587,0.477,1.065,1.063,1.065 c0.173,0,0.328-0.049,0.475-0.125l0.005,0.007l1.84-1.234L14.316,9.461z M6.073,4.874c1.346,0,2.437-1.091,2.437-2.437 S7.419,0,6.073,0S3.636,1.092,3.636,2.437S4.727,4.874,6.073,4.874z"></path> </g> </g></svg>            </div>
+            <div class="role-body">
+            <div class="role-title">Teaching Assistant - Intro to Computer Systems</div>
+            </div>
+        </div>
+
+        <!-- Intramurals card -->
+        <div class="role-card">
+            <div class="role-icon" aria-hidden="true">
+            <!-- whistle / leadership icon -->
+                <svg style="width: 80%;"version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g> <path class="st0" d="M367.918,69.237H129.781h-9.365l-7.227,5.949L9.514,160.546L0,168.382v12.322v79.167v21.874l21.534,3.824 l106.199,18.9c11.706,2.082,21.551,9.824,26.335,20.71l0.425,0.96l0.498,0.927c0.008,0.016,3.059,5.753,5.119,11.676 c21.993,63.19,76.312,104.023,138.385,104.023c44.031,0,84.652-19.019,111.437-52.186l67.359-84.359l0.624-0.782l0.566-0.832 l0.212-0.314l11.119-14.616l0.867-1.139l0.74-1.232C504.884,264.867,512,239.289,512,213.319 C512,133.872,447.365,69.237,367.918,69.237z M403.516,356.781l-13.894,17.395c-21.627,26.778-54.021,42.482-91.127,42.482 c-54.255,0-96.72-37.63-113.728-86.501c-2.821-8.106-6.798-15.483-6.798-15.483c-8.277-18.84-25.404-32.309-45.664-35.912 L26.106,259.87v-70.397H247.06c17.404,0,35.135,0,54.876,0c31.655,0,60.233,12.807,80.989,33.55 c20.739,20.752,33.541,49.331,33.546,80.986C416.466,323.078,411.738,340.975,403.516,356.781z M469.034,273.867l-11.726,15.415 l-0.417,0.646l-24.109,30.193c0.646-5.294,1.092-10.648,1.092-16.112c-0.004-72.87-59.065-131.931-131.938-131.94 c-19.741,0-37.472,0-54.876,0H36.592l93.188-76.727c0,0,202.62,0,238.137,0c65.158,0,117.976,52.823,117.976,117.977 C485.894,235.49,479.67,256.149,469.034,273.867z"></path> <polygon class="st0" points="240.836,154.853 315.673,154.853 369.809,109.466 294.972,109.466 "></polygon> </g> </g></svg>
+            </div>
+            <div class="role-body">
+            <div class="role-title">Student Director - Wheaton Intramurals</div>
+            </div>
+        </div>
+
+        <!-- CSC card -->
+        <div class="role-card">
+            <div class="role-icon" aria-hidden="true">
+                <svg style="width: 80%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z" fill="#ffffff"></path> <path d="M12.5 11.5L11.0858 10.0858L13.1716 8L11.0858 5.91422L12.5 4.5L16 8L12.5 11.5Z" fill="#ffffff"></path> <path d="M2.82843 8L4.91421 10.0858L3.5 11.5L0 8L3.5 4.5L4.91421 5.91422L2.82843 8Z" fill="#ffffff"></path> </g></svg>            </div>
+            <div class="role-body">
+            <div class="role-title">Vice President - Computer Science Cabinet</div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    </div>
+
+
+  </RadzenStack>
+</section>

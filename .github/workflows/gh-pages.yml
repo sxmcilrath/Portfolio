@@ -32,25 +32,24 @@ jobs:
       - name: Prepare site (404 + .nojekyll + ensure base href)
         run: |
           SITE_DIR="build/wwwroot"
-          # Safety: ensure the site dir exists
           test -d "$SITE_DIR"
 
-          # 1) SPA fallback: GitHub Pages uses 404.html for unknown routes
+          # 1) SPA fallback
           cp "$SITE_DIR/index.html" "$SITE_DIR/404.html"
 
-          # 2) Disable Jekyll processing
+          # 2) Disable Jekyll
           touch "$SITE_DIR/.nojekyll"
 
-          # 3) Ensure <base href> matches repo name (owner.github.io/<repo>/)
+          # 3) Force <base href> to /<repo>/ no matter what it was
           REPO="${{ github.event.repository.name }}"
           INDEX="$SITE_DIR/index.html"
-          # Replace any existing <base href="/something/"> with /<repo>/
-          sed -i -E "s|<base href=\"/[^\"]*/\">|<base href=\"/${REPO}/\">|g" "$INDEX"
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build/wwwroot
+          # Replace ANY <base href="..."> (handles /, /foo/, missing space before />)
+          sed -i -E 's|<base href="[^"]*"\s*/?>|<base href="/'"$REPO"'/"/>|g' "$INDEX"
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                path: build/wwwroot
 
   deploy:
     environment:

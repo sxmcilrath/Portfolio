@@ -2,7 +2,7 @@ name: Deploy Blazor WASM to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # ← change if your default branch isn't main
+    branches: [ main ]   # change if your default branch isn't main
   workflow_dispatch:
 
 permissions:
@@ -46,10 +46,11 @@ jobs:
 
           # Replace ANY <base href="..."> (handles /, /foo/, missing space before />)
           sed -i -E 's|<base href="[^"]*"\s*/?>|<base href="/'"$REPO"'/"/>|g' "$INDEX"
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                path: build/wwwroot
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/wwwroot
 
   deploy:
     environment:

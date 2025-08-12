@@ -162,28 +162,38 @@ code {
 
 
 /* Navbar */
-.custom-navbar {
+.custom-navbar{
   position: fixed;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%) translateY(-100%);
+  transform: translateX(-50%) translateY(-100%); /* keep your initial offscreen */
   opacity: 0;
-  padding: 0.75rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   pointer-events: none;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  /* size + shape */
+  padding: .6rem .9rem;
+  border-radius: 16px;
+
+  /* frosted glass that reads on dark backgrounds */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.16);     /* hairline edge */
+  box-shadow:
+    0 6px 24px rgba(0,0,0,.30),                /* soft depth only */
+    inset 0 0 0 1px rgba(255,255,255,.06);     /* subtle inner stroke */
+
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+
+  /* remove gooey (this was warping edges & button radii) */
+  filter: none;
+
+  /* keep your transitions for show/hide */
+  transition: opacity .6s ease-out, transform .6s ease-out;
   will-change: transform, opacity;
-
-  /* — frosted-glass base — */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  /* — gooey/liquid edges — */
-  filter: url(#gooey);
 }
+
 /* Visible state: slide in + Bond‑style pop */
 .show-navbar {
   /* bring into view before animation kicks in */
@@ -252,11 +262,22 @@ code {
 }
 
 
-/* 1) Hide buttons by default */
+/* Buttons — keep pill shape, high contrast on dark */
 .custom-navbar .nav-button{
+
+  /* glassy, but higher contrast for readability */
+  background: var(--accent-secondary-light) !important;
+  border: 1px solid rgba(255,255,255,.18);
+  color: #E9EAEE;
+  padding: .4rem .8rem;
+
+  /* crisp text without glow */
+  text-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: none;
+
+  /* your entrance animation stays; we just improve default state */
   opacity: 0;
   transform: translateY(-10px);
-  border-radius: 0rem !important;
 }
 
 /* 2) When navbar has .show-navbar, animate buttons in with a delay */
@@ -265,6 +286,42 @@ code {
   /* match this delay to the length of your bondJamesBond animation (1.5s) */
   animation-delay: 1.5s;
 }
+
+/* Subtle interaction (no glow) */
+.custom-navbar .nav-button:hover{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.26);
+}
+
+.custom-navbar .nav-button:active{
+  transform: translateY(0); /* cancel tiny lift from your fade-in end */
+  background: rgba(255,255,255,.22);
+}
+
+/* Thin separators between buttons (optional) */
+.custom-navbar .nav-button + .nav-button{
+  position: relative;
+}
+.custom-navbar .nav-button + .nav-button::before{
+  content:"";
+  position: absolute;
+  left: -4px; top: 20%;
+  width: 1px; height: 60%;
+  background: rgba(255,255,255,.12);
+  border-radius: 1px;
+}
+
+/* Fallback if backdrop-filter isn’t supported */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  .custom-navbar{
+    background: rgba(28,30,34,.90); /* dark translucent */
+    border-color: rgba(255,255,255,.10);
+  }
+  .custom-navbar .nav-button{
+    background: rgba(255,255,255,.08);
+  }
+}
+
 
 /* 3) Define the keyframes for the button reveal */
 @keyframes fadeInButton {
@@ -314,7 +371,12 @@ code {
 
     --accent: var(--rz-primary, #f97316);          /* fallback: orange-500 */
     --bg: rgb(40,54,60); 
-    --text: #eaeaea;   
+    --text: #eaeaea;  
+
+
+    --accent2: #7dd3fc;
+    --glass: rgba(24,24,27,.82);     /* same as #18181B w/ alpha */
+    --glass-border: rgba(255,255,255,.08); 
 
   }
 

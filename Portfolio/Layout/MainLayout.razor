@@ -8,10 +8,10 @@
     {
         <div class="custom-navbar @(showNav ? "show-navbar" : "hide-navbar")">
             <RadzenStack Orientation="Orientation.Horizontal">
-                <RadzenButton class="nav-button rz-border-radius-1" Text="About Me" Style="" />
-                <RadzenButton class="nav-button rz-border-radius-1" Text="Work" Style="" />
-                <RadzenButton class="nav-button rz-border-radius-1" Text="Projects"/>
-                <RadzenButton class="nav-button rz-border-radius-1" Text="Education"/>
+                <RadzenButton class="nav-button rz-border-radius-1" Text="About Me" Click="@(() => ScrollTo("about-me"))"/>
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Work" Click="@(() => ScrollTo("work"))" />
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Projects" Click="@(() => ScrollTo("projects"))"/>
+                <RadzenButton class="nav-button rz-border-radius-1" Text="Education" Click="@(() => ScrollTo("school"))"/>
             </RadzenStack>
         </div>
     }
@@ -60,4 +60,8 @@
         isAnimating = false;
     }
 
+    private async Task ScrollTo(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToSection", sectionId );
+    }
 }

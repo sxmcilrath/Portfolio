@@ -7,15 +7,15 @@ public partial class WorkTimeline
 {
     private string sdMarkdown = """
         * Collaborated in an agile dev team to launch MVP 1, building .NET Razor UI components, implementing backend API controllers, provisioning Azure Cosmos DB containers and services for DTO management.
-        * Deploying custom Azure modules and APIM resources to the cloud using Terraform plans and Swagger, enabling reliable infrastructure via IaC and regulation for internal and external vendor API access.
-        * Developing a Razor killswitch component and RESTful .NET Core API call to automate Azure API resource deallocation and ServiceNow change requests, eliminating manual workflows.
-        * Participating in an Agile DevOps environment, running CI/CD pipelines, and contributing to the SDLC.
+        * Deployed custom Azure modules and APIM resources to the cloud using Terraform plans and Swagger, enabling reliable infrastructure via IaC and regulation for internal and external vendor API access.
+        * Developed a Razor component and RESTful .NET Core API call to automate Azure resource deallocation and ServiceNow change requests, eliminating manual workflows.
+        * Participated in an Agile DevOps environment, running CI/CD pipelines, and contributing to the SDLC.
         """;
 
     private string rsMarkdown = """
         * Worked alongside professor to migrate core components of a multichannel secret sharing protocol from C to Zig, leveraging Zig’s modern safety and concurrency features to enhance performance and maintainability.
-        * Utilized stream libraries to implement message sharing across machines versus across ports.
-        * Implemented custom multithreading iPerf tests to benchmark and improve sharing speeds and throughput by 10x.
+        * Engineered and optimized multichannel TCP/IP client–server modules in Zig, implementing socket creation, binding, and multi-connection handling.
+        * Implemented custom multithreading iPerf tests to benchmark and improve sharing speeds and throughput by 5x.
         """;
 
     private string atMarkdown = """

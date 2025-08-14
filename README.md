@@ -1,4 +1,4 @@
-# 🌐 Personal Portfolio — [Your Name]
+# 🌐 Personal Portfolio — [Sam McIlrath]
 
 Welcome to the source code for my portfolio!  
 This site is the hub for my work, skills, projects, and education!
